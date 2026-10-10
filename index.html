@@ -1,35 +1,62 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT OWNER</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial,sans-serif;padding:12px}.header{display:flex;justify-content:space-between;align-items:center;margin:10px 0}.logo{font-size:32px;font-weight:900;color:#d4af37}.badge{background:#d4af37;color:#000;padding:4px 12px;border-radius:20px;font-weight:800;font-size:12px}.btn-logout{background:#222;color:#888;border:none;padding:8px 16px;border-radius:20px}.tabs{display:flex;gap:8px;margin:15px 0;overflow-x:auto}.tab{padding:10px 18px;border-radius:25px;border:none;font-weight:700;white-space:nowrap}.tab.active{background:#d4af37;color:#000}.tab:not(.active){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:16px;padding:16px;margin:12px 0}.card h2{font-size:20px;margin-bottom:8px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.stat{background:#111;border:2px solid #d4af37;border-radius:12px;padding:12px;text-align:center}.stat.gold{border-color:#d4af37}.stat small{color:#888;font-size:10px}.stat b{font-size:18px;color:#d4af37;display:block}.live-box{border:2px solid #ff0000;border-radius:16px;padding:16px;margin:12px 0;background:#1a0a0a}.btn-live{width:100%;padding:14px;border:none;border-radius:10px;font-weight:900;font-size:16px;margin:6px 0}.btn-start{background:#ff0000;color:#fff}.btn-stop{background:#222;color:#888}.biz{color:#d4af37;font-weight:800}</style></head><body>
-<div class="header"><div><span class="logo">VAULT</span> <span class="badge">OWNER</span></div><button class="btn-logout">Logout</button></div>
-<div class="tabs"><button class="tab active">📊 Overview</button><button class="tab">🎬 Creators</button><button class="tab">💰 Payouts</button></div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT FULL</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:10px}.h{display:flex;justify-content:space-between;align-items:center}.logo{font-size:30px;font-weight:900;color:#d4af37}.badge{background:#d4af37;color:#000;padding:4px 12px;border-radius:20px;font-weight:800;font-size:11px}.tabs{display:flex;gap:6px;margin:12px 0;overflow:auto}.tab{padding:9px 14px;border-radius:20px;border:none;font-weight:700;white-space:nowrap;font-size:12px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.stat{border:2px solid #d4af37;border-radius:10px;padding:10px;text-align:center;flex:1}.stats{display:flex;gap:8px}.biz{color:#d4af37;font-weight:900} video{width:100%;border-radius:10px;background:#000;margin:6px 0;max-height:260px} input,select{width:100%;padding:10px;margin:5px 0;background:#000;color:#fff;border:1px solid #d4af37;border-radius:8px}.b{width:100%;padding:12px;border:none;border-radius:8px;font-weight:900;margin:5px 0}.g{background:#d4af37;color:#000}.r{background:red;color:#fff}.box{background:#222;padding:8px;margin:6px 0;border-radius:8px}.green{color:#0f0;font-weight:800}</style></head><body>
+<div class=h><div><span class=logo>VAULT</span> <span class=badge>OWNER</span></div><button style="background:#222;color:#888;border:none;padding:6px 12px;border-radius:20px">Logout</button></div>
+<div class=tabs><button class="tab a" onclick="show('ov')">📊 Overview</button><button class="tab" onclick="show('cre')">🎬 Performers</button><button class="tab" onclick="show('vid')">📹 Videos</button><button class="tab" onclick="show('vouch')">🎫 Vouchers</button><button class="tab" onclick="show('pay')">💰 Payouts</button></div>
 
-<div class="card">
-<h2>MY Business Account (OWNER) 🔞</h2>
-<div style="margin:10px 0"><span class="biz">🏦 Yakho Trading</span><br><b style="font-size:22px;color:#d4af37">6209 1184 5543</b><br><small style="color:#888">Last: 5543 • FNB Account • Business</small></div>
+<div id=ov class=card>
+<h3>MY Business Account (OWNER) 🔞</h3>
+<div style="margin:8px 0"><span class=biz>🏦 Yakho Trading</span><br><b style="font-size:20px;color:#d4af37">6209 1184 5543</b><br><small>Last: 5543 • FNB • Business</small></div>
+<div class=stats><div class=stat><small>TOTAL REVENUE</small><br><b style="color:#d4af37;font-size:18px">R 12,450</b></div><div class=stat><small>Active 18+ Vouchers</small><br><b style="color:#d4af37;font-size:18px">248</b></div></div>
 
-<div class="stats">
-<div class="stat gold"><small>TOTAL REVENUE</small><b>R 12,450</b></div>
-<div class="stat"><small>Active 18+ Vouchers</small><b>248</b></div>
-</div>
-
-<div class="live-box">
-<b style="color:#ff0000">🔴 LIVE CONTROL (Owner)</b><br><small style="color:#888">Qala live - Abalandeli bazobona 🔴 LIVE button</small><br><br>
-<button class="btn-live btn-start" onclick="startLive()">🔴 START LIVE - Qala Bukhoma</button>
-<button class="btn-live btn-stop" onclick="stopLive()">Stop Live</button>
-<div id="liveStatus" style="margin-top:10px;color:#0f0;font-weight:700"></div>
+<div style="border:2px solid red;border-radius:12px;padding:10px;margin:10px 0;background:#1a0a0a">
+<b style="color:red">🔴 LIVE CONTROL + CAMERA - Uzibona!</b><br>
+<video id=cam autoplay muted playsinline></video><br>
+<button class="b" style="background:#333;color:#fff" onclick="openCam()">📷 VULA CAMERA - Zibone</button>
+<button class="b r" onclick="startLive()">🔴 START LIVE - Qala Bukhoma</button>
+<button class="b" style="background:#222;color:#888" onclick="stopLive()">Stop Live</button>
+<div id=ls class=green></div>
 </div>
 </div>
+
+<div id=cre class=card style=display:none>
+<b>👑 Ama Performers - Namavideo + Live + Camera</b><br>
+<input id=pn placeholder="Igama le Performer - Thando"><input id=pp placeholder="Inombolo - 071..."><button class="b g" onclick="addP()">✅ Add Performer</button>
+<div id=pl></div>
+</div>
+
+<div id=vid class=card style=display:none>
+<b>📹 FAKA VIDEO - Per Performer</b><br>
+<select id=sel></select>
+<input type=file id=vf accept="video/*" onchange="upV(this)"><br>
+<small>Khetha performer phezulu - Khetha video - Izongena ku gallery</small>
+<div id=vl></div>
+</div>
+
+<div id=vouch class=card style=display:none>
+<b>🎫 VOUCHER - Thenga e Supermarket / Spaza - Faka PIN - Buka</b><br>
+<button class="b g" onclick="genV()">🎫 Generate Voucher PIN (Shop)</button>
+<div id=vlist></div><br>
+<input id=pin placeholder="Faka Voucher PIN - 8 digits"><button class="b r" onclick="usePin()">🔓 Vula Video + Live nge PIN</button>
+<div id=vmsg></div>
+</div>
+
+<div id=pay class=card style=display:none><b>💰 Payouts - Yakho Trading 6209 1184 5543</b><br><div class=box>FNB - Last 5543 - Business<br>Total: R12,450 - 248 Active Vouchers</div></div>
 
 <script>
-function startLive(){
-alert("🔴 LIVE Started - All viewers bazoyibona!");
-document.getElementById('liveStatus').innerHTML="🔴 LIVE - Bukhoma Manje! Abalandeli bayakubona!";
-localStorage.setItem('ownerLive','true');
+let stream=null;
+function show(id){['ov','cre','vid','pay','vouch'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';render();}
+async function openCam(){try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user"},audio:true});document.getElementById('cam').srcObject=stream;}catch(e){alert('Vumela Camera: '+e)}}
+function startLive(){if(!stream)return alert('Vula Camera kuqala! 📷');let L=JSON.parse(localStorage.L||'[]');L.unshift({title:'Owner Live',time:new Date().toLocaleString(),cam:true});localStorage.L=JSON.stringify(L);document.getElementById('ls').innerHTML='🔴 LIVE - Bukhoma Manje! Abalandeli bayakubona!';alert('🔴 LIVE Started - All viewers bazoyibona!');render();}
+function stopLive(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;cam.srcObject=null;}document.getElementById('ls').innerHTML='⏹️ LIVE Stopped';}
+function addP(){let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value,phone:pp.value,id:Date.now()});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();}
+function upV(input){let f=input.files[0];if(!f)return;if(!sel.value)return alert('Khetha Performer kuqala!');let url=URL.createObjectURL(f);let V=JSON.parse(localStorage.V||'[]');V.unshift({perf:sel.value,name:f.name,url:url,time:new Date().toLocaleString()});localStorage.V=JSON.stringify(V);render();}
+function genV(){let code=Math.floor(10000000+Math.random()*90000000).toString();let v=JSON.parse(localStorage.VC||'[]');v.push({code:code,used:false});localStorage.VC=JSON.stringify(v);render();}
+function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='<div class=box style=color:red>❌ PIN ayilungile!</div>';return;}f.used=true;localStorage.VC=JSON.stringify(v);localStorage.ACCESS='true';vmsg.innerHTML='<div class=box style=color:#0f0>✅ PIN Lungile! Manje ungabuka wonke ama Video + LIVE!</div>';render();}
+function render(){
+let P=JSON.parse(localStorage.P||'[]');pl.innerHTML=P.map(x=>'<div class=box>🟢 '+x.name+' - '+x.phone+'<br><small>ID:'+x.id+'</small></div>').join('')||'Akukho performer';
+sel.=P.map(x=>'<option value="'+x.name+'">'+x.name+'</option>').join('')||'<option>Khetha performer</option>';
+let V=JSON.parse(localStorage.V||'[]');let hasAccess=localStorage.ACCESS=='true';
+vl.innerHTML=V.map(v=>'<div class=box><b>👑 '+v.perf+'</b> - 📹 '+v.name+'<br>'+(hasAccess?'<video src="'+v.url+'" controls></video>':'<div style=background:#000;padding:20px;text-align:center;border-radius:8px>🔒 Faka Voucher PIN ukubuka</div>')+'<br><small>'+v.time+'</small></div>').join('')||'Akukho video - Faka ngaphezulu';
+let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 PIN: <b style=color:gold;font-size:18px>'+v.code+'</b> - '+(v.used?'Used ✅':'Active 🟢')+'<br><small>Thengisa e Shop / Spaza - R50</small></div>').join('')||'Akukho voucher - Generate';
 }
-function stopLive(){
-document.getElementById('liveStatus').innerHTML="⏹️ LIVE Stopped";
-localStorage.removeItem('ownerLive');
-alert("LIVE Stopped");
-}
-if(localStorage.getItem('ownerLive')){document.getElementById('liveStatus').innerHTML="🔴 LIVE - Bukhoma Manje!";}
-</script>
-</body></hhtml
+render();
+</script></body></html>
