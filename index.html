@@ -1,11 +1,6 @@
-<DOCTYPE html>
-<html lang="zu">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VAULT</title>
-</head>
-<body style="margin:0;background:#000">
-<iframe src="https://vault-2026.vercel.app/?role=owner" style="width:100%;height:100vh;border:0"></iframe>
-</body>
-</html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT</title><style>body{background:#000;color:#fff;font-family:Arial;padding:10px;margin:0}.c{background:#111;border:1px solid #FFD700;border-radius:12px;padding:12px;margin:10px 0}input{width:100%;padding:10px;margin:5px 0;background:#000;color:#fff;border:1px solid #FFD700;border-radius:8px;box-sizing:border-box}.b{width:100%;padding:12px;border:none;border-radius:8px;font-weight:900;margin:5px 0}.g{background:#FFD700;color:#000}.r{background:#ff0044;color:#fff}#gate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999}</style></head><body>
+<div id="gate"><div class="c" style="text-align:center"><h2 style="color:#FFD700">🔞 18+ VAULT</h2><input id="age" placeholder="ID 13 digits"><button class="b g" onclick="localStorage.setItem('vAge','1');gate.style.display='none'">✅ NGENA</button></div></div>
+<div class="c"><b style="color:#FFD700">🏦 BUSINESS: <span id="bizT">Not Set</span></b><input id="bn" placeholder="Yakho Trading"><input id="ba" placeholder="6209 1184 5543"><button class="b g" onclick="localStorage.setItem('biz',JSON.stringify({a:ba.value}));bizT.innerText=ba.value.slice(-4)">💾 Save Biz</button></div>
+<div class="c" style="border-color:#ff0044"><b style="color:#ff0044">🔴 LIVE BOTH SIDES</b><input id="lt" placeholder="Live Title"><button class="b r" onclick="goLive('OWNER')">🔴 OWNER LIVE</button><button class="b r" onclick="goLive('CREATOR')">🔴 CREATOR LIVE</button><div id="lives"></div></div>
+<div class="c"><b>👑 Add Creator - Igama+Namba</b><input id="cn" placeholder="Thando"><input id="cp" placeholder="071..."><button class="b g" onclick="addC()">✅ Add</button><div id="list"></div></div>
+<script>function goLive(w){let l=JSON.parse(localStorage.getItem('lvs')||'[]');l.unshift({w:w,t:lt.value||w+' Live'});localStorage.setItem('lvs',JSON.stringify(l));renderL()}function renderL(){let l=JSON.parse(localStorage.getItem('lvs')||'[]');lives.innerHTML=l.map(x=>'<div style=background:#1a0005;padding:6px;margin:4px 0>🔴 '+x.w+': '+x.t+'</div>').join('')}function addC(){let n=cn.value,p=cp.value;if(!n||!p)return alert('Faka Igama+Namba');let c=JSON.parse(localStorage.getItem('cs')||'[]');c.push({n:n,p:p});localStorage.setItem('cs',JSON.stringify(c));renderC()}function renderC(){let c=JSON.parse(localStorage.getItem('cs')||'[]');list.innerHTML=c.map(x=>'<div style=background:#151515;padding:6px;margin:4px 0>🟢 '+x.n+' - '+x.p+'</div>').join('')}if(localStorage.getItem('vAge'))gate.style.display='none';let b=JSON.parse(localStorage.getItem('biz')||'null');if(b)bizT.innerText=b.a.slice(-4);renderL();renderC();</script></body></html>
