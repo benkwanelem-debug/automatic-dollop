@@ -3,59 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ISANGO VAULT - 18+</title>
+<title>ISANGO VAULT</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:Arial}
-.card{background:#1a1a1a;border-radius:12px;padding:20px;margin:10px;border:1px solid #333}
-input{width:100%;padding:14px;border-radius:8px;border:1px solid #444;background:#222;color:#fff;margin:8px 0}
-.btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin:6px 0}
-.btn-y{background:#FFD700;color:#000}
-.btn-g{background:#222;color:#fff;border:1px solid #555}
-.link{color:#FFD700;text-decoration:none;font-weight:bold}
+body{background:#000;color:#fff;font-family:Arial;display:flex;justify-content:center;padding:20px}
+.box{border:2px solid #FFD700;border-radius:20px;padding:25px;width:100%;max-width:380px;text-align:center;background:#0a0a0a}
+input{width:100%;padding:16px;border-radius:12px;border:2px solid #FFD700;background:#000;color:#fff;font-size:20px;text-align:center;letter-spacing:2px;margin:15px 0}
+.btn{width:100%;padding:16px;border-radius:12px;border:none;background:#FFD700;color:#000;font-weight:bold;font-size:16px;cursor:pointer}
+.card{background:#1a1a1a;border-radius:12px;padding:20px;margin-top:20px;border:1px solid #333}
+.btn2{width:100%;padding:14px;border-radius:8px;border:none;font-weight:bold;margin:6px 0;cursor:pointer;display:block;text-decoration:none;text-align:center}
 </style>
 </head>
 <body>
-<div style="max-width:420px;margin:20px auto">
+<div style="width:100%;max-width:380px">
 
-<div id="ageGate" class="card">
-<h2 style="color:#FFD700">🔞 ISANGO VAULT 18+</h2>
-<p style="margin:10px 0;color:#aaa">Faka ID yakho - 13 digits</p>
-<input id="idNumber" type="tel" maxlength="13" placeholder="9311246131082">
-<button class="btn btn-y" onclick="verifyID()">🔍 Ngena Manje</button>
+<!-- IKHASI EBUSTAKHILE - MANJE ELUNGISIWE -->
+<div id="ageGate" class="box">
+<h2 style="color:#FFD700">🔞 18+ ONLY - ID VERIFY</h2>
+<p style="color:#888;margin:10px 0">Faka ID - 30 sec only</p>
+<input id="idNumber" type="tel" maxlength="13" value="9311246131082">
+<button class="btn" onclick="go()">🔍 Verify 18+ (13 digits)</button>
 </div>
 
-<div id="loginView" class="card" style="display:none">
-<h2>ISANGO VAULT ✅</h2>
-<p style="color:#0f0;margin:10px 0">✅ ID Verified - 18+ OK</p>
-<a class="btn btn-y" href="?role=owner" style="display:block;text-align:center;text-decoration:none">👑 Owner Dashboard</a>
-<a class="btn btn-g" href="?creator=12345&role=viewer" style="display:block;text-align:center;text-decoration:none">👁️ Viewer Test</a>
+<div id="main" style="display:none">
+<div class="card">
+<h2 style="color:#FFD700">✅ ISANGO VAULT - Uvuliwe!</h2>
+<p style="color:#0f0;margin:10px 0">ID Verified - 93 = 31 yrs - 18+ OK</p>
+<a class="btn2" style="background:#FFD700;color:#000" href="?role=owner">👑 Owner Dashboard - R1280</a>
+<a class="btn2" style="background:#222;color:#fff;border:1px solid #555" href="?creator=123&role=viewer">👁️ Viewer Test Link</a>
+<hr style="margin:15px 0;border:1px solid #333">
+<h3>📲 Engeza Abantu:</h3>
+<p style="font-size:12px;color:#aaa;margin:8px 0">Copy link - shintsha igama:</p>
+<input id="link" value="https://isango-vault-2026.vercel.app/?creator=Thando&role=viewer" style="font-size:12px;letter-spacing:0">
+<button class="btn2" style="background:#333;color:#fff" onclick="navigator.clipboard.writeText(document.getElementById('link').value);alert('Link copied!')">📋 Copy Link</button>
 </div>
 
-<div id="ownerView" class="card" style="display:none">
-<h3>👑 Owner - R1280</h3>
-<button class="btn btn-y" onclick="alert('Upload feature - Faka video yakho!')">🎬 UPLOAD VIDEO</button>
-<a class="btn btn-g" href="?" style="display:block;text-align:center;text-decoration:none">⬅️ Phuma</a>
+<div id="owner" class="card" style="display:none">
+<h3>👑 Owner Panel</h3>
+<button class="btn2" style="background:#FFD700;color:#000" onclick="alert('Upload - Khetha video!')">🎬 UPLOAD VIDEO</button>
+<p style="margin-top:10px;color:#aaa">Abantu bakho bazovela lapha</p>
 </div>
-
-<div id="viewerView" class="card" style="display:none">
-<h3>👁️ Viewer</h3>
-<p>Video Player - R49 voucher</p>
-<video controls style="width:100%;border-radius:8px;background:#000;height:200px"></video>
-<a class="btn btn-g" href="?" style="display:block;text-align:center;text-decoration:none">⬅️ Phuma</a>
 </div>
 
 </div>
 <script>
-function verifyID(){
-let id=document.getElementById('idNumber').value;
-if(id.length<13){alert('Faka 13 digits');return;}
+function go(){
+let v=document.getElementById('idNumber').value;
+if(v.length<13){alert('Faka 13 digits');return;}
 document.getElementById('ageGate').style.display='none';
-document.getElementById('loginView').style.display='block';
+document.getElementById('main').style.display='block';
 }
 let p=new URLSearchParams(location.search);
-if(p.get('role')=='owner'){document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='none';document.getElementById('ownerView').style.display='block';}
-if(p.get('role')=='viewer'){document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='none';document.getElementById('viewerView').style.display='block';}
+if(p.get('role')=='owner'){
+document.getElementById('ageGate').style.display='none';
+document.getElementById('main').style.display='block';
+document.getElementById('owner').style.display='block';
+}
+if(p.get('role')=='viewer'){
+document.getElementById('ageGate').style.display='none';
+document.getElementById('main').style.display='block';
+}
 </script>
 </body>
 </html>
