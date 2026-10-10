@@ -1,186 +1,76 @@
-<!DOCTYPE html>
-<html lag="zu">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VAULT - Owner Add Creator</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial;padding:10px}
-.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.logo{font-size:26px;font-weight:900;color:#FFD700}
-.badge{padding:5px 10px;border-radius:14px;font-size:10px;font-weight:900}
-.ownerBg{background:#FFD700;color:#000}
-.creatorBg{background:#00ff88;color:#000}
-.viewerBg{background:#0088ff;color:#fff}
-.card{background:#111;border:1px solid #2a2a2a;border-radius:16px;padding:14px;margin-bottom:10px}
-.box{border-radius:10px;padding:10px;border:1px solid #2a2a2a;background:#151515;margin-bottom:6px}
-.gold{border:1.5px solid #FFD700;background:#1a1600}
-.green{border:1.5px solid #00ff88;background:#001a0a}
-.big{font-size:26px;font-weight:900;color:#FFD700}
-.btn{width:100%;padding:11px;border-radius:9px;border:none;font-weight:900;cursor:pointer;margin:5px 0;font-size:12px}
-.red{background:#ff0000;color:#fff}
-.dark{background:#222;color:#fff;border:1px solid #333}
-.goldBtn{background:#FFD700;color:#000}
-.greenBtn{background:#00ff88;color:#000}
-.blueBtn{background:#0088ff;color:#fff}
-.small{font-size:10px;color:#888}
-#ageGate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;padding:18px}
-.ageBox{border:2px solid #FFD700;border-radius:16px;padding:18px;width:100%;max-width:400px;text-align:center;background:#0a0a0a}
-input{width:100%;padding:11px;border-radius:8px;border:1.5px solid #FFD700;background:#000;color:#fff;font-size:13px;margin:6px 0}
-.tabs{display:flex;gap:5px;margin-bottom:10px;overflow:auto}
-.tab{padding:8px 12px;border-radius:16px;border:none;font-weight:800;font-size:11px;cursor:pointer}
-.active{background:#FFD700;color:#000}
-.inactive{background:#1a1a1a;color:#777;border:1px solid #333}
-video{width:100%;height:280px;object-fit:cover;background:#000;display:block;border-radius:12px}
-.row{display:flex;gap:6px}.row>*{flex:1}
-</style>
-</head>
-<body>
-<div id="ageGate"><div class="ageBox">
-<h2 style="color:#FFD700">🔞 18+ VERIFY</h2>
-<input id="gateInput" type="tel" value="9311246131082">
-<button class="btn goldBtn" onclick="document.getElementById('ageGate').style.display='none';initApp(document.getElementById('gateInput').value)">✅ Ngena</button>
-</div></div>
-<div class="hdr"><div><span class="logo">VAULT</span> <span id="roleBadge" class="badge ownerBg">OWNER</span></div>
-<div style="text-align:right"><p id="userName" style="font-weight:900;color:#FFD700;font-size:12px">Owner</p><p id="userRole" class="small">Dashboard</p></div></div>
+<!DOCTYPE html><html lang="zu"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT - BUSINESS ACC</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:Arial;padding:10px}.card{background:#111;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.box{background:#151515;border:1px solid #333;border-radius:10px;padding:10px;margin:6px 0}.gold{border:1.5px solid #FFD700;background:#1a1600}.green{border:1.5px solid #00ff88;background:#001a0a}.btn{width:100%;padding:12px;border-radius:10px;border:none;font-weight:900;margin:5px 0;font-size:12px}.goldBtn{background:#FFD700;color:#000}.blueBtn{background:#0088ff;color:#fff}.dark{background:#222;color:#fff;border:1px solid #333}.greenBtn{background:#00ff88;color:#000}input,select{width:100%;padding:10px;border-radius:8px;border:1.5px solid #FFD700;background:#000;color:#fff;margin:5px 0}.badge{background:#FFD700;color:#000;padding:4px 8px;border-radius:10px;font-size:10px;font-weight:900}.small{font-size:11px;color:#888}.tabs{display:flex;gap:6px;margin:10px 0;overflow:auto}.tab{padding:8px 12px;border-radius:16px;border:none;font-weight:800;font-size:11px;white-space:nowrap}.active{background:#FFD700;color:#000}.inactive{background:#222;color:#888;border:1px solid #333}#gate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:99;padding:20px}.gbox{border:2px solid #FFD700;border-radius:14px;padding:16px;width:100%;max-width:380px;text-align:center;background:#0a0a0a}.row{display:flex;gap:6px}.row>*{flex:1}.big{font-size:22px;font-weight:900;color:#FFD700}</style></head><body>
+<div id="gate"><div class="gbox"><h2 style="color:#FFD700">🔞 18+ VERIFY</h2><input id="gInput" value="9311246131082"><button class="btn goldBtn" onclick="document.getElementById('gate').style.display='none';init()">✅ Ngena</button></div></div>
+<div style="display:flex;justify-content:space-between"><div><b style="color:#FFD700;font-size:22px">VAULT</b> <span class="badge">OWNER</span></div><div id="bizShow" style="color:#FFD700;font-size:10px;font-weight:900">Business: Not Set</div></div>
 <div class="tabs" id="tabs"></div>
-<div id="ownerTab" class="card">
-<h2>👑 MY Dashboard - Owner</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0">
-<div class="box gold"><p class="small">TOTAL REVENUE</p><div class="big">R 12,450</div></div>
-<div class="box"><p class="small">Creators</p><div class="big" style="color:#fff" id="statCount">0</div></div>
+
+<div id="owner" class="card">
+<h3>🏦 BUSINESS ACCOUNT YAMI (Yakho)</h3>
+<div class="box gold" id="bizBox"><p class="small">Faka Business Account Yakho - Uzothola % yakho lapha - Friday</p>
+<div class="row"><input id="bizName" placeholder="Business Name: Vault Media"><input id="bizBank" placeholder="Bank: FNB/Capitec"></div>
+<div class="row"><input id="bizAcc" placeholder="Business Acc No"><input id="bizHolder" placeholder="Holder"></div>
+<select id="bizMethod"><option value="Bank">Bank</option><option value="eWallet">eWallet</option><option value="CashSend">CashSend</option><option value="Instant">Instant Money</option></select>
+<button class="btn goldBtn" onclick="saveBiz()">💾 Save Business Account Yami</button>
+<p class="small" id="bizSaved"></p></div>
+
+<div style="margin-top:12px"><h3>👑 Add Creator - Igama + Namba (Bank uma ekhona)</h3>
+<p class="small">Uma engenayo ibank - Faka Igama + Namba QHA - Uzothola nge eWallet/CashSend/Instant</p>
+<input id="cName" placeholder="Igama: Thando"><input id="cPhone" placeholder="Namba: 0712345678">
+<div class="row"><select id="pMethod"><option value="eWallet">eWallet (Namba QHA)</option><option value="CashSend">CashSend</option><option value="Instant">Instant Money</option><option value="Bank">Bank</option></select><input id="cBank" placeholder="Bank: FNB - Uma ekhona"></div>
+<div class="row"><input id="cAcc" placeholder="Acc/Cell - Uma engenayo faka namba"><input id="cHolder" placeholder="Holder"></div>
+<button class="btn goldBtn" onclick="add()">✅ Add Creator</button><div id="list"></div></div>
 </div>
-<div style="background:#151515;border:1px solid #FFD700;border-radius:12px;padding:12px">
-<h3 style="color:#FFD700;font-size:13px">➕ ENGEZA CREATOR - Nge Bank</h3>
-<input id="cName" placeholder="Igama: Thando">
-<div class="row"><input id="cPhone" placeholder="Number: 0712345678"><input id="cBank" placeholder="Bank: FNB"></div>
-<div class="row"><input id="cAcc" placeholder="Account No"><input id="cHolder" placeholder="Holder"></div>
-<button class="btn goldBtn" onclick="addCreatorFull()">✅ Add Creator + Generate Link</button>
-<div id="creatorsListOwner" style="margin-top:10px"></div>
-</div>
-<div style="margin-top:12px;background:#001a00;border:1px solid #00ff88;border-radius:12px;padding:12px">
-<h3 style="color:#00ff88;font-size:13px">📥 Ama-Video - Accept</h3>
-<div id="pendingList"><p class="small">Akukho</p></div>
-</div>
-</div>
-<div id="creatorTab" class="card" style="display:none">
-<h2 id="creatorTitle" style="color:#00ff88">Creator</h2>
-<div id="creatorAcceptBox" style="background:#1a1600;border:1.5px solid #FFD700;border-radius:12px;padding:12px;margin-top:10px">
-<h3 style="color:#FFD700;font-size:13px">🔐 Accept Nge Number Yakho</h3>
-<input id="acceptPhone" placeholder="071...">
-<button class="btn goldBtn" onclick="acceptCreatorInvite()">✅ Accept - Vula Dashboard</button>
-<p class="small">Bank: <span id="acceptBankInfo">-</span></p>
-</div>
-<div id="creatorDash" style="display:none">
-<div style="background:#001a00;border:1.5px solid #00ff88;border-radius:12px;padding:12px;margin-top:10px">
-<div id="creatorLiveView" style="display:none"><video id="camCreator" autoplay playsinline muted style="width:100%;height:280px;background:#000"></video></div>
-<button id="cStart" class="btn greenBtn" onclick="startLive('creator')">🟢 QALA I-LIVE YAMI</button>
-<button id="cStop" class="btn dark" style="display:none" onclick="stopLive('creator')">⏹️ Stop & Thumela ku-Owner</button>
-</div>
-<div style="margin-top:12px;background:#151515;border:1px solid #0088ff;border-radius:12px;padding:12px">
-<h3 style="color:#0088ff;font-size:13px">🔗 I-Link Yami Yabalandeli - Yami QHA!</h3>
-<input id="creatorFollowerLink" readonly style="font-size:10px;width:100%;padding:10px;background:#000;color:#fff;border:1px solid #0088ff;border-radius:8px">
-<button class="btn blueBtn" onclick="navigator.clipboard.writeText(document.getElementById('creatorFollowerLink').value).then(()=>alert('Copied!'))">📋 Copy Follower Link</button>
-<div id="myVideos" style="margin-top:10px"></div>
-</div>
-</div>
-</div>
-<div id="viewerTab" class="card" style="display:none"><h2 id="viewerTitle" style="color:#0088ff">Viewer</h2><div id="viewerContent"></div></div>
+
+<div id="payout" class="card" style="display:none"><h3 style="color:#FFD700">💰 Friday Payouts + Business Yami</h3><div class="box gold" id="bizSummary"></div><div id="reqList"></div><button class="btn dark" onclick="show('owner')">⬅️ Owner</button></div>
+
+<div id="creator" class="card" style="display:none"><h3 id="cTitle" style="color:#00ff88">Welcome</h3>
+<div id="acceptBox" class="box gold"><h4 style="color:#FFD700">👋 Welcome - Faka Inamba Yakho Kuphela!</h4><input id="aPhone" placeholder="071..."><button class="btn goldBtn" onclick="accept()">✅ Faka Namba - Ngena</button></div>
+<div id="dash" style="display:none">
+<div class="box green"><p style="font-size:16px;font-weight:900;color:#00ff88">🎉 Welcome <span id="welcomeName"></span>!</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="box"><p class="small">SENZE MALINI</p><p class="big" id="myEarn">R 450</p></div><div class="box"><p class="small">PAYOUT</p><p style="font-weight:900;color:#00ff88" id="myMethod"></p></div></div><button class="btn greenBtn" onclick="requestPayout()">💸 Request Payout Friday</button><p class="small" id="reqStatus"></p></div>
+<div class="box" style="border-color:#FFD700"><h4 style="color:#FFD700">📤 Upload Video</h4><input type="file" id="vFile" accept="video/*"><input id="vTitle" placeholder="Title"><button class="btn goldBtn" onclick="uploadVideo()">⬆️ Upload</button><div id="myVideos"></div></div>
+<div class="box" style="border-color:#0088ff"><p style="color:#0088ff;font-weight:900">🔗 Follower Link Yakho QHA!</p><input id="fLink" readonly><button class="btn blueBtn" onclick="navigator.clipboard.writeText(document.getElementById('fLink').value).then(()=>alert('Copied'))">📋 Copy</button></div>
+</div></div>
+<div id="viewer" class="card" style="display:none"><h3 id="vTitle" style="color:#0088ff"></h3><div id="vGrid"></div></div>
+
 <script>
-let myName='Owner',currentCreator=null,streamCreator=null,recCreator=null,chunksCreator=[];
+let cur=null;
 function getP(){let p=new URLSearchParams(location.search);return{creator:p.get('creator')||'',viewerOf:p.get('viewerOf')||''};}
-function initApp(input){
- let pr=getP();
- if(pr.viewerOf){showViewer(pr.viewerOf);return;}
- if(pr.creator){currentCreator=pr.creator;myName=pr.creator;showCreator(pr.creator,input);return;}
- showOwner();
+function init(){let pr=getP();if(pr.viewerOf){showViewer(pr.viewerOf);return;}if(pr.creator){cur=pr.creator;showCreator(pr.creator);return;}show('owner');loadBiz();}
+function show(id){['owner','payout','creator','viewer'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';if(id=='owner'){render();loadBiz();}if(id=='payout'){renderReqs();loadBizSummary();}}
+function showTabsOwner(){let reqs=JSON.parse(localStorage.getItem('vault_requests')||'[]');let pend=reqs.filter(r=>r.status=='pending').length;document.getElementById('tabs').innerHTML='<button class="tab active" onclick="show(\'owner\')">👑 Owner + Business Acc</button><button class="tab inactive" onclick="show(\'payout\')">💰 Friday'+(pend?' ('+pend+')':'')+'</button>';}
+function loadBiz(){let biz=JSON.parse(localStorage.getItem('vault_biz')||'null');if(biz){document.getElementById('bizSaved').innerText='✅ Saved: '+biz.name+' - '+biz.bank+' '+biz.acc+' - '+biz.method;document.getElementById('bizShow').innerText='Biz: '+biz.bank+' '+biz.acc.slice(-4);document.getElementById('bizName').value=biz.name;document.getElementById('bizBank').value=biz.bank;document.getElementById('bizAcc').value=biz.acc;document.getElementById('bizHolder').value=biz.holder;document.getElementById('bizMethod').value=biz.method;}}
+function loadBizSummary(){let biz=JSON.parse(localStorage.getItem('vault_biz')||'null');let c=document.getElementById('bizSummary');if(!biz){c.innerHTML='<p class=small>Business Account ayikho - Yifake ku Owner tab</p>';return;}c.innerHTML='<b>🏦 Business Account Yami (Yakho) - Uzothola % yakho lapha Friday</b><br><small>'+biz.name+' • '+biz.bank+' '+biz.acc+' • '+biz.holder+' • '+biz.method+'</small><br><small>Platform Cut: R 2,450 this week → Iya ku Business Account yakho</small>';}
+function saveBiz(){
+ let n=document.getElementById('bizName').value.trim()||'My Business',b=document.getElementById('bizBank').value.trim()||'FNB',a=document.getElementById('bizAcc').value.trim(),h=document.getElementById('bizHolder').value.trim()||n,m=document.getElementById('bizMethod').value;
+ if(!a){alert('Faka Business Acc No / Cell No yakho - Nge eWallet/CashSend ungafaka namba QHA');return;}
+ let biz={name:n,bank:b,acc:a,holder:h,method:m};localStorage.setItem('vault_biz',JSON.stringify(biz));document.getElementById('bizSaved').innerText='✅ Business Account Saved: '+n+' - '+b+' '+a+' - '+m+' (Fake noma Real - Isebenza!)';document.getElementById('bizShow').innerText='Biz: '+b+' '+a.slice(-4);alert('✅ Business Account Yakho Saved!\n\n'+n+'\n'+b+' '+a+'\n'+h+'\n'+m+'\n\nManje % yakho izoya lapha Friday - Fake noma Real - Isebenza!');
 }
-function showMain(id){['ownerTab','creatorTab','viewerTab'].forEach(x=>{document.getElementById(x).style.display='none';});document.getElementById(id).style.display='block';}
-function showOwner(){showMain('ownerTab');renderCreatorsFull();renderPending();}
-function showCreator(name,input){
- showMain('creatorTab');document.getElementById('creatorTitle').innerText='Sawubona '+name;
- let creators=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');
- let cr=creators.find(c=>c.name.toLowerCase()==name.toLowerCase());
- if(!cr){document.getElementById('creatorAcceptBox').innerHTML='Akakho';return;}
- document.getElementById('acceptBankInfo').innerText=cr.bank+' '+cr.acc;
- if(cr.status=='active'){
-  document.getElementById('creatorAcceptBox').style.display='none';document.getElementById('creatorDash').style.display='block';
-  document.getElementById('creatorFollowerLink').value=location.origin+location.pathname+'?viewerOf='+encodeURIComponent(name);
- }else{
-  document.getElementById('acceptPhone').value=input||'';
-  if(input && input.slice(-9)==cr.phone.slice(-9)){acceptCreatorInvite();}
- }
+function showCreator(name){show('creator');document.getElementById('tabs').innerHTML='<button class="tab active">🟢 '+name+'</button>';document.getElementById('cTitle').innerText='Welcome '+name+' 🟢';let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let cr=list.find(c=>c.name.toLowerCase()==name.toLowerCase());if(!cr){document.getElementById('acceptBox').innerHTML='Akakho';return;}if(cr.status=='active'){openDash(cr);}else{document.getElementById('acceptBox').style.display='block';document.getElementById('dash').style.display='none';}}
+function openDash(cr){document.getElementById('acceptBox').style.display='none';document.getElementById('dash').style.display='block';document.getElementById('welcomeName').innerText=cr.name;document.getElementById('myEarn').innerText=cr.earnings;document.getElementById('myMethod').innerText=cr.method+' - '+(cr.acc||cr.phone);document.getElementById('fLink').value=location.origin+location.pathname+'?viewerOf='+encodeURIComponent(cr.name);renderMyVideos(cr.name);let reqs=JSON.parse(localStorage.getItem('vault_requests')||'[]');let my=reqs.filter(r=>r.name.toLowerCase()==cr.name.toLowerCase()&&r.status=='pending');document.getElementById('reqStatus').innerText=my.length?'⏳ Ucelile - Linda Friday':'Chofoza Request Friday';}
+function showViewer(name){show('viewer');let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let cr=list.find(c=>c.name.toLowerCase()==name.toLowerCase());if(!cr){document.getElementById('vGrid').innerHTML='Akatholakali';return;}document.getElementById('vTitle').innerText='👁️ '+cr.name+' - YAKHE QHA!';renderViewerVideos(name);}
+function add(){
+ let n=document.getElementById('cName').value.trim(),p=document.getElementById('cPhone').value.trim(),b=document.getElementById('cBank').value.trim(),a=document.getElementById('cAcc').value.trim(),h=document.getElementById('cHolder').value.trim(),m=document.getElementById('pMethod').value;
+ if(!n||!p){alert('Faka Igama + Namba QHA! Bank uma ekhona');return;}if(!b)b=m;if(!a)a=p;if(!h)h=n;
+ let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');list.push({name:n,phone:p,bank:b,acc:a,holder:h,method:m,status:'pending',earnings:'R 450'});localStorage.setItem('vault_creators_full',JSON.stringify(list));
+ alert('✅ '+n+' - '+p+'\nCreator Link (Namba kuphela):\n'+location.origin+location.pathname+'?creator='+encodeURIComponent(n));render();
 }
-function showViewer(creatorName){
- showMain('viewerTab');
- let creators=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');
- let cr=creators.find(c=>c.name.toLowerCase()==creatorName.toLowerCase());
- if(!cr){document.getElementById('viewerContent').innerHTML='Akatholakali';return;}
- document.getElementById('viewerTitle').innerText='👁️ Ubukela '+cr.name+' - YAKHE QHA!';
- let vids=JSON.parse(localStorage.getItem('vault_creator_'+cr.name)||'[]');
- let html='<div class=box style=border-color:#0088ff><p style=color:#0088ff>📺 Channel ka '+cr.name+' - YAKHE QHA</p><p class=small>Bank: '+cr.bank+'</p></div>';
- vids.forEach(v=>{html+='<div class=box><b>📹 '+v.date+'</b><br><button class=btn blueBtn onclick=window.open("'+v.url+'")>▶️ Play</button></div>';});
- document.getElementById('viewerContent').innerHTML=html;
-}
-function addCreatorFull(){
- let name=document.getElementById('cName').value.trim();
- let phone=document.getElementById('cPhone').value.trim();
- let bank=document.getElementById('cBank').value.trim();
- let acc=document.getElementById('cAcc').value.trim();
- let holder=document.getElementById('cHolder').value.trim();
- if(!name||!phone||!bank||!acc){alert('Gcwalisa');return;}
- let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');
- list.push({name:name,phone:phone,bank:bank,acc:acc,holder:holder||name,status:'pending',created:new Date().toLocaleString()});
- localStorage.setItem('vault_creators_full',JSON.stringify(list));
- alert('✅ '+name+' wengeziwe!\\nCreator Link:\\n'+location.origin+location.pathname+'?creator='+encodeURIComponent(name)+'&role=creator');
- renderCreatorsFull();
-}
-function renderCreatorsFull(){
- let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');
- let c=document.getElementById('creatorsListOwner');
- if(!list.length){c.innerHTML='<p class=small>Awekho</p>';return;}
- c.innerHTML='';
- list.forEach((cr,i)=>{
-  let d=document.createElement('div');d.className='box';
-  d.innerHTML='<b>'+cr.name+' - '+cr.status+'</b><br><small>'+cr.phone+' • '+cr.bank+' '+cr.acc+'</small><br><button class=btn dark style=width:auto;padding:6px 10px;font-size:10px;background:#333;color:#fff' + ' onclick=navigator.clipboard.writeText("'+location.origin+location.pathname+'?creator='+encodeURIComponent(cr.name)+'&role=creator")>Creator Link</button><button class=btn dark style=width:auto;padding:6px 10px;font-size:10px;background:#0088ff;color:#fff;margin-left:4px' + ' onclick=navigator.clipboard.writeText("'+location.origin+location.pathname+'?viewerOf='+encodeURIComponent(cr.name)+'")>Follower Link (Yakhe QHA)</button>';
-  c.appendChild(d);
+function render(){
+ showTabsOwner();let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let c=document.getElementById('list');
+ if(!list.length){c.innerHTML='<p class=small>Awekho</p>';return;}c.innerHTML='';list.forEach(cr=>{
+  let d=document.createElement('div');d.className='box';d.style.borderColor=cr.status=='active'?'#00ff88':'#FFD700';
+  d.innerHTML='<b>'+(cr.status=='active'?'🟢':'🟡')+' '+cr.name+' - '+cr.phone+' - '+cr.method+'</b><br><small>'+cr.method+': '+(cr.acc||cr.phone)+' - '+cr.earnings+'</small><br><div class=row><button class=btn dark style=width:auto;padding:6px 10px;font-size:10px;background:#333' + ' onclick=navigator.clipboard.writeText("'+location.origin+location.pathname+'?creator='+encodeURIComponent(cr.name)+'")>📋 Creator Link</button><button class=btn dark style=width:auto;padding:6px 10px;font-size:10px;background:#0088ff;color:#fff;margin-left:4px' + ' onclick=navigator.clipboard.writeText("'+location.origin+location.pathname+'?viewerOf='+encodeURIComponent(cr.name)+'")>👁️ Follower</button></div>';c.appendChild(d);
  });
 }
-function acceptCreatorInvite(){
- let name=currentCreator;let phone=document.getElementById('acceptPhone').value.trim();
- let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let cr=list.find(c=>c.name.toLowerCase()==name.toLowerCase());
- if(phone.slice(-9)!=cr.phone.slice(-9)){alert('Number ayifani! '+cr.phone);return;}
- cr.status='active';localStorage.setItem('vault_creators_full',JSON.stringify(list));
- document.getElementById('creatorAcceptBox').style.display='none';document.getElementById('creatorDash').style.display='block';
- document.getElementById('creatorFollowerLink').value=location.origin+location.pathname+'?viewerOf='+encodeURIComponent(name);
- alert('Wamukelekile '+name);
+function renderReqs(){
+ let reqs=JSON.parse(localStorage.getItem('vault_requests')||'[]');let c=document.getElementById('reqList');
+ let pend=reqs.filter(r=>r.status=='pending');if(!pend.length){c.innerHTML='<p class=small>Awekho requests</p>';return;}c.innerHTML='';pend.forEach((r,i)=>{
+  let d=document.createElement('div');d.className='box';d.style.borderColor='#ff4444';d.innerHTML='<b>🔴 '+r.name+' - '+r.amount+' - '+r.method+'</b><br><small>'+(r.acc||r.phone)+' - '+r.date+'</small><br><button class=btn goldBtn style=width:auto;padding:8px 12px;background:#00ff88;color:#000' + ' onclick=payReq('+i+')>💸 Pay Friday</button>';c.appendChild(d);
+ });
 }
-function renderPending(){
- let pend=JSON.parse(localStorage.getItem('vault_pending')||'[]');let c=document.getElementById('pendingList');
- if(!pend.length){c.innerHTML='<p class=small>Akukho</p>';return;}
- c.innerHTML='';pend.forEach((p,i)=>{let d=document.createElement('div');d.className='box';d.innerHTML='<b>'+p.creator+' - '+p.date+'</b><br><button class=btn greenBtn style=width:auto;padding:6px 10px;background:#00ff88;color:#000' + ' onclick=acceptVideo('+i+')>Accept → '+p.creator+'</button>';c.appendChild(d);});
-}
-function acceptVideo(i){let pend=JSON.parse(localStorage.getItem('vault_pending')||'[]');let v=pend[i];let key='vault_creator_'+v.creator;let list=JSON.parse(localStorage.getItem(key)||'[]');list.unshift({date:v.date,size:v.size,url:v.url});localStorage.setItem(key,JSON.stringify(list));pend.splice(i,1);localStorage.setItem('vault_pending',JSON.stringify(pend));renderPending();}
-async function startLive(who){
- let s=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:true});
- streamCreator=s;let v=document.getElementById('camCreator');v.srcObject=s;await v.play();document.getElementById('creatorLiveView').style.display='block';
- document.getElementById('cStart').style.display='none';document.getElementById('cStop').style.display='block';
- chunksCreator=[];recCreator=new MediaRecorder(s);recCreator.ondataavailable=e=>{if(e.data.size>0)chunksCreator.push(e.data)};recCreator.onstop=()=>{let b=new Blob(chunksCreator,{type:'video/webm'});let u=URL.createObjectURL(b);let p=JSON.parse(localStorage.getItem('vault_pending')||'[]');p.unshift({creator:myName,date:new Date().toLocaleString(),size:(b.size/1024/1024).toFixed(2)+' MB',url:u});localStorage.setItem('vault_pending',JSON.stringify(p));alert('Thunyelwe ku-Owner');};recCreator.start();
-}
-function stopLive(who){if(recCreator&&recCreator.state!='inactive')recCreator.stop();if(streamCreator)streamCreator.getTracks().forEach(t=>t.stop());document.getElementById('creatorLiveView').style.display='none';document.getElementById('cStart').style.display='block';document.getElementById('cStop').style.display='none';}
-initApp();
-</script>
-</body>
-</html>
-*Bhuti le entsha ayiphuki!*
-
-*Umahluko:*
-✅ *Wena Owner* - U-adda creator nge *Bank + Number*
-✅ *App i-generate Creator Link* ngokuzenzakalelayo
-✅ *Creator u-accept nge-number yakhe* - Uma e-acceptile, *Follower Link yakhe* iya-vela ngokuzenzakalelayo
-✅ *Um­landeli uma evula `?viewerOf=Thando` - Ubona OKUKA THANDO QHA!* - Ababoni okwabanye!
-
-*Vula emva kokufaka:*
-isango-vault-2026.vercel.app/?role=owner
-*Thumela DONE uma usuyifakile - Ngilinde screenshot entsha!*
+function accept(){let phone=document.getElementById('aPhone').value.trim();let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let cr=list.find(c=>c.name.toLowerCase()==cur.toLowerCase());if(phone.slice(-9)!=cr.phone.slice(-9)){alert('Number ayifani! Faka: '+cr.phone);return;}cr.status='active';localStorage.setItem('vault_creators_full',JSON.stringify(list));openDash(cr);alert('Welcome '+cur+'!');}
+function requestPayout(){let list=JSON.parse(localStorage.getItem('vault_creators_full')||'[]');let cr=list.find(c=>c.name.toLowerCase()==cur.toLowerCase());let reqs=JSON.parse(localStorage.getItem('vault_requests')||'[]');if(reqs.find(r=>r.name.toLowerCase()==cur.toLowerCase()&&r.status=='pending')){alert('Usuvele ucelile');return;}reqs.push({name:cr.name,phone:cr.phone,method:cr.method,acc:cr.acc||cr.phone,amount:cr.earnings,date:new Date().toLocaleString(),status:'pending'});localStorage.setItem('vault_requests',JSON.stringify(reqs));document.getElementById('reqStatus').innerText='✅ Request ithunyelwe! Linda Friday';}
+function payReq(i){let reqs=JSON.parse(localStorage.getItem('vault_requests')||'[]');let r=reqs.filter(x=>x.status=='pending')[i];let idx=reqs.indexOf(r);let pin=prompt('Pay '+r.name+' - '+r.amount);if(pin){reqs[idx].status='paid';localStorage.setItem('vault_requests',JSON.stringify(reqs));alert('Paid!');renderReqs();}}
+function uploadVideo(){let f=document.getElementById('vFile').files[0];let t=document.getElementById('vTitle').value.trim()||'Untitled';if(!f){alert('Khetha video');return;}let vids=JSON.parse(localStorage.getItem('vault_videos_'+cur)||'[]');vids.push({title:t,date:new Date().toLocaleString()});localStorage.setItem('vault_videos_'+cur,JSON.stringify(vids));alert('✅ Uploaded: '+t);renderMyVideos(cur);}
+function renderMyVideos(name){let vids=JSON.parse(localStorage.getItem('vault_videos_'+name)||'[]');let c=document.getElementById('myVideos');if(!vids.length){c.innerHTML='<p class=small>Awekho</p>';return;}c.innerHTML='';vids.forEach(v=>{let d=document.createElement('div');d.className='box';d.innerHTML='<b>🎬 '+v.title+'</b><br><small>'+v.date+'</small>';c.appendChild(d);});}
+function renderViewerVideos(name){let vids=JSON.parse(localStorage.getItem('vault_videos_'+name)||'[]');let c=document.getElementById('vGrid');if(!vids.length){c.innerHTML='<div class=box style=border-color:#0088ff><p>📺 Channel ka '+name+' - YAKHE QHA!</p><p class=small>Akukho video</p></div>';return;}c.innerHTML='';vids.forEach(v=>{let d=document.createElement('div');d.className='box';d.style.borderColor='#0088ff';d.innerHTML='<b>🎬 '+v.title+' - Ka '+name+'</b><br><small>'+v.date+'</small>';c.appendChild(d);});}
+init();
+</script></body></html>
