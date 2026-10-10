@@ -1,67 +1,160 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ISANGO VAULT</title><style>body{background:#070707;color:#fff;margin:0;font-family:Arial}h1{color:#FFD700;text-align:center;font-size:34px;margin:25px 0 5px}p.sub{text-align:center;color:#888}.box{background:#151515;border:1px solid #333;max-width:420px;margin:0 auto;padding:22px;border-radius:14px;text-align:center}input,select{width:100%;padding:12px;background:#000;color:#fff;border:1px solid #444;border-radius:10px;margin:6px 0;box-sizing:border-box}button.main{width:100%;padding:12px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:8px}#msg{margin-top:12px;font-weight:bold;min-height:20px}.ok{color:#00FF88}.err{color:#FF4444}#dash{display:none;max-width:1000px;margin:0 auto;padding:15px}.nav{display:flex;gap:6px;flex-wrap:wrap;margin:15px 0}.nav button{padding:9px 14px;background:#222;color:#fff;border:1px solid #333;border-radius:20px;cursor:pointer}.nav button.active{background:#FFD700;color:#000}.card{background:#151515;border:1px solid #333;padding:16px;border-radius:12px;margin:10px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:600px){.grid{grid-template-columns:1fr}}.stat{font-size:22px;color:#FFD700;font-weight:bold}.small{color:#999;font-size:12px}label{color:#FFD700;font-size:12px;text-align:left;display:block;margin-top:8px}.payout{background:#00c853;color:#000;border:none;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer}</style></head><body>
+<!DOCTYPE html>
+<html lang="zu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISANGO VAULT - Owner + Creators</title>
+<style>
+*{box-sizing:border-box;font-family:system-ui}
+body{background:#000;color:#fff;margin:0;padding:10px}
+.card{background:#111;border:1px solid #333;border-radius:14px;padding:16px;margin:10px 0}
+.btn{background:#FFD700;color:#000;border:0;padding:12px 18px;border-radius:10px;font-weight:800;width:100%;cursor:pointer;margin:5px 0}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#000;color:#fff;margin:6px 0}
+.left{text-align:left}
+.tab{display:inline-block;padding:8px 14px;border-radius:20px;background:#222;margin:4px;cursor:pointer;font-size:13px}
+.tab.active{background:#FFD700;color:#000;font-weight:800}
+.small{font-size:11px;opacity:0.6}
+.ownerTag{background:#FFD700;color:#000;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:900}
+.bankTag{background:#00FF88;color:#000;padding:2px 8px;border-radius:10px;font-size:10px}
+.walletTag{background:#00D4FF;color:#000;padding:2px 8px;border-radius:10px;font-size:10px}
+</style>
+</head>
+<body>
 
-<!-- AGE GATE 18+ -->
-<div id="ageGate" style="position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px">
-<div style="background:#151515;border:2px solid #FFD700;max-width:400px;padding:28px;border-radius:16px;text-align:center">
-<h2 style="color:#FFD700;margin:0">⚠️ 18+ ONLY</h2>
-<p>Isango Vault - Adults Only. Heritage content 18+.</p><p style="color:#aaa;font-size:13px">Okuqukethwe kwabantu abadala kuphela (18+)</p>
-<div style="display:flex;gap:10px;margin-top:18px"><button onclick="document.getElementById('ageGate').style.display='none'" style="flex:1;padding:12px;background:#FFD700;color:#000;border:none;border-radius:10px;font-weight:bold">YES 18+ - Ngingu 18+</button><button onclick="location.href='https://google.com'" style="flex:1;padding:12px;background:#222;color:#fff;border:1px solid #444;border-radius:10px">NO Exit</button></div>
-</div></div>
+<div id="ageGate" class="card" style="text-align:center;max-width:400px;margin:50px auto">
+<h2 style="color:#FFD700">18+ ONLY</h2><p>Isango Vault iqukethe heritage content 18+</p>
+<button class="btn" onclick="document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='block'">YES - Ngina 18+</button>
+<button class="btn" style="background:#222;color:#fff" onclick="location.href='https://google.com'">NO - Phuma</button>
+</div>
 
-<!-- LOGIN -->
-<div id="loginView"><h1>ISANGO VAULT</h1><p class="sub">Isango — Where Heritage is Forever</p>
-<div class="box"><h3 style="color:#FFD700;margin:0 0 10px">🔐 Enter 16-Digit Voucher</h3>
-<input id="code" placeholder="0000 0000 0000 0000" maxlength="19"><button class="main" onclick="unlock()">Unlock Vault</button><div id="msg"></div>
-<p class="small" style="margin-top:12px">Admin test: 0000 0000 0000 0000</p></div></div>
+<div id="loginView" class="card" style="display:none;text-align:center;max-width:450px;margin:20px auto">
+<h1 style="color:#FFD700;margin:0">ISANGO VAULT</h1><p class="small">2 Links System</p>
+
+<!-- LINK 1 VIEWER - VOUCHER ONLY -->
+<div style="border:2px solid #FFD700;border-radius:14px;padding:14px;margin:12px 0;background:#0a0a0a">
+<p style="color:#FFD700;font-weight:900;margin:0">👁️ LINK 2 - YAMA CREATORS</p>
+<p class="small" style="color:#FFD700">Abalandeli bayifaka ku-WhatsApp/Facebook</p>
+<input id="vcode" placeholder="0000 0000 0000 0000" style="text-align:center;font-size:20px;letter-spacing:2px">
+<button class="btn" onclick="viewerUnlock()">🔓 Unlock - Viewer Voucher</button>
+<p class="small">Voucher only - No dashboard</p>
+</div>
+
+<div style="opacity:0.2;margin:10px">━━━ OR ━━━</div>
+
+<!-- LINK 1 OWNER - NO VOUCHER -->
+<div style="border:2px solid #fff;border-radius:14px;padding:14px;margin:12px 0;background:#111">
+<p style="font-weight:900;margin:0">👑 LINK 1 - EYAKHO (OWNER)</p>
+<p class="small">Wena wedwa - Akukho voucher</p>
+<button class="btn" onclick="ownerLogin()" style="background:#fff;color:#000">👑 OWNER DASHBOARD - No Voucher</button>
+<p class="small" style="color:#FFD700">isango-vault...?role=owner</p>
+</div>
+</div>
 
 <!-- DASHBOARD -->
-<div id="dash">
-<div style="display:flex;justify-content:space-between;align-items:center"><h2 style="color:#FFD700;margin:0">VAULT DASHBOARD</h2><button onclick="logout()" style="background:#222;color:#fff;border:1px solid #333;padding:7px 13px;border-radius:20px">Logout</button></div>
-<div class="nav">
-<button id="b1" class="active" onclick="tab('overview')">📊 Overview</button>
-<button id="b2" onclick="tab('creators')">🎬 Creators</button>
-<button id="b3" onclick="tab('performers')">⭐ Performers</button>
-<button id="b4" onclick="tab('payouts')">💰 Payouts</button>
+<div id="dash" style="display:none">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h2 style="color:#FFD700">VAULT DASHBOARD <span class="ownerTag">OWNER</span></h2>
+<button onclick="location.reload()" style="background:#222;color:#fff;border-radius:20px;padding:6px 12px;border:0">Logout</button>
 </div>
 
-<div id="overview">
-<div class="grid"><div class="card"><div class="small">Total Revenue</div><div class="stat" id="rev">R 12,450</div></div><div class="card"><div class="small">Creators</div><div class="stat" id="cCount">0</div></div><div class="card"><div class="small">Active Vouchers</div><div class="stat">248</div></div><div class="card"><div class="small">Business Account</div><div class="stat" style="font-size:14px">FNB • 6283*** 1234</div><div class="small">Isango Vault PTY LTD</div></div></div>
+<div style="margin:10px 0">
+<span class="tab active" id="t-overview" onclick="tab('overview')">📊 Overview</span>
+<span class="tab" id="t-creators" onclick="tab('creators')">🎬 Creators</span>
+<span class="tab" id="t-payouts" onclick="tab('payouts')">💰 Payouts</span>
 </div>
 
-<div id="creators" style="display:none">
-<div class="card"><h3>➕ Add New Creator</h3>
-<label>Full Name / Igama</label><input id="crName" placeholder="Thando Zulu">
+<!-- OVERVIEW - OWNER BUSINESS ACCOUNT -->
+<div id="view-overview" class="card">
+<h3>MY Business Account (OWNER) - Yami Wedwa</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div class="card" style="margin:0;background:#1a1a00;border-color:#FFD700"><p class="small">TOTAL REVENUE (Yonke imali engena kuwe)</p><h2 style="color:#FFD700;margin:0">R 12,450</h2><p class="small">FNB • 6283*** 1234 - OWNER</p><span class="ownerTag">MY ACCOUNT</span></div>
+<div class="card" style="margin:0"><p class="small">Active Vouchers</p><h2 style="margin:0">248</h2><p class="small">Abathengile</p></div>
+</div>
+<p class="small" style="margin-top:12px;color:#FFD700">⚠️ Imali ye-voucher INGENA KU-MY BUSINESS ACCOUNT (OWNER) kuqala. Bese wena uyabaholela ama-creators nge Bank / eWallet.</p>
+<div class="card" style="background:#000"><p style="font-weight:bold">🔗 Amalink Akho:</p><p class="small">👑 Eyami (Owner - No Voucher):<br><span style="color:#FFD700">isango-vault.../ ?role=owner</span></p><p class="small">👁️ Yama Creators (Nika Abalandeli - Voucher):<br><span style="color:#00FF88">isango-vault.../ ?creator=ID&role=viewer</span></p></div>
+</div>
+
+<!-- CREATORS - 2 TYPES -->
+<div id="view-creators" class="card" style="display:none">
+<h3>🎬 Creators - 2 Izinhlobo Zabantu</h3>
+
+<div class="card" style="border-color:#FFD700;background:#0a0a0a">
+<h4>➕ Add New Creator</h4>
+<label>Full Name</label><input id="crName" placeholder="Thando Zulu">
 <label>Phone / WhatsApp</label><input id="crPhone" placeholder="082 123 4567">
-<label>Business Account / Bank Name</label><select id="crBank"><option>FNB</option><option>Capitec</option><option>Standard Bank</option><option>ABSA</option><option>Nedbank</option><option>TymeBank</option></select>
-<label>Account Number / Acc No</label><input id="crAcc" placeholder="1234567890">
-<label>eWallet / Instant Cash Send</label><select id="crWallet"><option>eWallet - FNB</option><option>Instant Money - Standard</option><option>CashSend - ABSA</option><option>Capitec Send</option><option>MTN MoMo</option><option>Vodacom m-pesa</option></select>
-<label>eWallet Number</label><input id="crWNum" placeholder="082 000 0000">
-<label>Earnings % (30-80%)</label><input id="crPerc" type="number" value="60">
-<button class="main" onclick="addCreator()">💾 Save Creator</button>
+
+<label style="color:#FFD700;font-weight:900">🔀 Uhlobo - Khetha Omunye:</label>
+<select id="crType" onchange="toggleBank()" style="background:#FFD700;color:#000;font-weight:900">
+<option value="bank">🏦 TYPE 1: UNE Bank Account</option>
+<option value="nowallet">📱 TYPE 2: AKANAYO Bank - eWallet/CashSend KUPHELA</option>
+</select>
+
+<div id="bankFields">
+<label>Bank Name</label><select id="crBank"><option>FNB</option><option>Capitec</option><option>Standard Bank</option><option>ABSA</option><option>Nedbank</option><option>TymeBank</option></select>
+<label>Account Number</label><input id="crAcc" placeholder="1234567890">
 </div>
+
+<div style="border:1px dashed #00D4FF;border-radius:10px;padding:10px;margin-top:8px">
+<label style="color:#00D4FF">📱 eWallet / CashSend (Wonke umuntu - Bank noma akanayo)</label>
+<select id="crWallet"><option>eWallet - FNB</option><option>Instant Money - Standard Bank</option><option>CashSend - ABSA</option><option>Capitec Global One Send</option><option>MTN MoMo</option><option>Vodacom m-pesa</option></select>
+<label>eWallet Number (Cell)</label><input id="crWNum" placeholder="082 000 0000">
+</div>
+
+<label>Commission % (Uzomholela malini?)</label><input id="crPerc" type="number" value="60">
+<button class="btn" onclick="addCreator()">💾 Save Creator + Generate Link</button>
+</div>
+
 <div id="creatorList"></div>
 </div>
 
-<div id="performers" style="display:none"><div class="card"><h3>⭐ Performers (18+ Verified)</h3><div id="perfList"><div class="small">No performers yet - Add from Creators tab</div></div></div></div>
-
-<div id="payouts" style="display:none">
-<div class="card"><h3>💰 Payout Center - Business Account</h3><p class="small">From: FNB Business • 6283*** 1234 | Balance: R 12,450</p>
-<div class="grid"><div class="card"><div class="small">Pending Payouts</div><div class="stat">R 2,340</div><button class="main" onclick="payoutAll()">Pay All via eWallet</button></div><div class="card"><div class="small">Last Payout</div><div class="stat" style="font-size:14px">Today 10:30 - R 850 to Thando</div><div class="small">via eWallet ✅</div></div></div></div>
-<div id="payoutList"></div>
+<div id="view-payouts" class="card" style="display:none">
+<h3>💰 Payouts - Hlukaniseke Ngobuhlo Babili</h3>
+<div id="payoutList" class="small">Awukafaki creators...</div>
 </div>
 
+</div>
+
+<!-- VIEWER VIEW -->
+<div id="viewerView" class="card" style="display:none;text-align:center">
+<h2 style="color:#FFD700">✅ Voucher Verified</h2><div id="viewerContent"></div>
+<button class="btn" style="background:#222;color:#fff" onclick="location.reload()">Phuma</button>
 </div>
 
 <script>
-let creators = JSON.parse(localStorage.getItem('isango_creators')||'[]');
-function unlock(){let v=document.getElementById('code').value.replace(/\D/g,'');let m=document.getElementById('msg');if(v.length!==16){m.innerHTML='<span class=err>❌ Faka inombolo engu-16 egcwele!</span>';return;}m.innerHTML='<span class=ok>✅ Yamukelekile: '+v.replace(/(.{4})/g,'$1 ').trim()+' 🔓</span>';setTimeout(()=>{document.getElementById('loginView').style.display='none';document.getElementById('dash').style.display='block';render();},700);}
-function tab(t){['overview','creators','performers','payouts'].forEach(x=>document.getElementById(x).style.display=x===t?'block':'none');['b1','b2','b3','b4'].forEach((b,i)=>{document.getElementById(b).className=(['overview','creators','performers','payouts'][i]===t?'active':'');});}
-function logout(){document.getElementById('dash').style.display='none';document.getElementById('loginView').style.display='block';document.getElementById('code').value='';document.getElementById('msg').innerText='';}
-function addCreator(){let c={name:crName.value,phone:crPhone.value,bank:crBank.value,acc:crAcc.value,wallet:crWallet.value,wNum:crWNum.value,perc:crPerc.value,earned:Math.floor(Math.random()*5000)+500,id:Date.now()};if(!c.name||!c.phone){alert('Faka igama ne-phone!');return;}creators.push(c);localStorage.setItem('isango_creators',JSON.stringify(creators));crName.value=crPhone.value=crAcc.value=crWNum.value='';render();tab('creators');alert('✅ Creator '+c.name+' Added!');}
-function render(){document.getElementById('cCount').innerText=creators.length;let html='';let phtml='';let payhtml='';creators.forEach((c,i)=>{html+=`<div class=card><div style=display:flex;justify-content:space-between><div><b>${c.name}</b><br><span class=small>${c.phone} • ${c.bank} ${c.acc.slice(-4)} • ${c.wallet} ${c.wNum}<br>Earnings: R ${c.earned} (${c.perc}%)</span></div><div><button class=payout onclick="doPayout(${i})">Payout R${c.earned}</button><br><button onclick="del(${i})" style="margin-top:6px;background:#222;color:#ff4444;border:1px solid #333;padding:5px 10px;border-radius:12px">Delete</button></div></div></div>`;phtml+=`<div class=card>👤 ${c.name} - Verified 18+ • ${c.perc}% • ${c.wallet}</div>`;payhtml+=`<div class=card><b>${c.name}</b> - R ${c.earned} pending → ${c.wallet} (${c.wNum}) <button class=payout onclick="doPayout(${i})" style="float:right">Send Now</button></div>`;});document.getElementById('creatorList').innerHTML=html||'<div class=card><span class=small>No creators yet</span></div>';document.getElementById('perfList').innerHTML=phtml||'<div class=small>No performers</div>';document.getElementById('payoutList').innerHTML=payhtml||'<div class=card><span class=small>No pending payouts</span></div>';}
-function doPayout(i){let c=creators[i];if(confirm(`Send R${c.earned} to ${c.name} via ${c.wallet} - ${c.wNum}?\n\nFrom Business Account FNB 6283***`)){alert(`✅ R${c.earned} SENT to ${c.name}!\n\nVia: ${c.wallet}\nTo: ${c.wNum}\nFrom: Business Account\n\nReference: ISANGO-${Date.now()}`);c.earned=0;localStorage.setItem('isango_creators',JSON.stringify(creators));render();}}
-function payoutAll(){if(creators.length==0)return alert('No creators');if(confirm(`Pay ALL creators? Total R${creators.reduce((a,b)=>a+b.earned,0)}`)){creators.forEach(c=>c.earned=0);localStorage.setItem('isango_creators',JSON.stringify(creators));render();alert('✅ All payouts sent via eWallet / Instant Cash!');}}
-function del(i){if(confirm('Delete?')){creators.splice(i,1);localStorage.setItem('isango_creators',JSON.stringify(creators));render();}}
-document.getElementById('code').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,16);e.target.value=v.replace(/(.{4})/g,'$1 ').trim();});
-render();
-</script></body></html>
+let creators=JSON.parse(localStorage.getItem('vault_creators')||'[]');
+function toggleBank(){let t=document.getElementById('crType').value;document.getElementById('bankFields').style.display=t==='bank'?'block':'none';}
+function ownerLogin(){document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='none';document.getElementById('dash').style.display='block';render();tab('overview');}
+function viewerUnlock(){let c=document.getElementById('vcode').value.replace(/\s/g,'');if(c.length<12){alert('Faka voucher ephelele 16 digits');return;}document.getElementById('loginView').style.display='none';document.getElementById('viewerView').style.display='block';document.getElementById('viewerContent').innerHTML='<p>Voucher: '+c+'</p><p style="font-size:40px">🔥</p><p>Heritage Content - Isango Vault</p><p class="small">Creator: '+ (new URLSearchParams(location.search).get('creator')||'General')+'</p>';}
+function tab(t){document.querySelectorAll('[id^=view-]').forEach(d=>d.style.display='none');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.getElementById('view-'+t).style.display='block';document.getElementById('t-'+t).classList.add('active');}
+function addCreator(){
+let name=document.getElementById('crName').value;if(!name){alert('Faka igama');return;}
+let type=document.getElementById('crType').value;
+let bank=document.getElementById('crBank').value;let acc=document.getElementById('crAcc').value;
+let wallet=document.getElementById('crWallet').value;let wnum=document.getElementById('crWNum').value;
+let perc=document.getElementById('crPerc').value;
+let id=Date.now().toString().slice(-5);
+creators.push({id,name,phone:document.getElementById('crPhone').value,type,bank,acc,wallet,wnum,perc});
+localStorage.setItem('vault_creators',JSON.stringify(creators));
+render();document.getElementById('crName').value='';alert('✅ Creator Saved! Link: ?creator='+id);
+}
+function render(){
+let html='';let pay='';
+if(creators.length==0){html='<p class="small">Awukafaki creators...</p>';}else{
+creators.forEach(c=>{
+let tag=c.type==='bank'?'<span class="bankTag">🏦 UNE BANK</span>':'<span class="walletTag">📱 AKANAYO - eWALLET ONLY</span>';
+let bankInfo=c.type==='bank'?c.bank+' • '+c.acc:'No Bank - '+c.wallet;
+let link=location.origin+location.pathname+'?creator='+c.id+'&role=viewer';
+html+='<div class="card" style="margin:8px 0;background:#000"><b>'+c.name+'</b> '+tag+'<br><span class="small">'+bankInfo+'<br>'+c.wallet+' - '+c.wnum+'<br>Commission: '+c.perc+'%</span><br><div style="background:#111;padding:8px;border-radius:8px;margin-top:6px"><span class="small" style="color:#FFD700">🔗 Link yakhe azonika abalandeli:</span><br><span style="font-size:11px;color:#00FF88;word-break:break-all">'+link+'</span><br><button onclick="navigator.clipboard.writeText(\''+link+'\')" style="background:#FFD700;color:#000;border:0;padding:4px 8px;border-radius:6px;margin-top:4px;font-size:11px">Copy Link</button></div></div>';
+pay+='<div class="card" style="margin:6px 0"><b>'+c.name+'</b> '+tag+'<br><span class="small">Payout to: '+(c.type==='bank'?c.bank+' '+c.acc : c.wallet+' '+c.wnum)+' - R '+(c.perc*10)+'</span> <button class="btn" style="width:auto;padding:6px 12px;font-size:12px" onclick="alert(\'Payout sent to '+c.name+' via '+(c.type==='bank'?c.bank:c.wallet)+'\')">Pay Now</button></div>';
+});
+}
+document.getElementById('creatorList').innerHTML=html;
+document.getElementById('payoutList').innerHTML=pay||'Awukafaki creators...';
+}
+render();toggleBank();
+// Auto role from URL
+let params=new URLSearchParams(location.search);
+if(params.get('role')==='owner'){ownerLogin();}
+if(params.get('role')==='viewer'){document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='block';}
+</script>
+</body>
+</html>
