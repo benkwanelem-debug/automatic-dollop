@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOTYPEPE html>
 <html lang="zu">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ISANGO VAULT - 18+ LIVE</title>
+<title>ISANGO VAULT - 18+ LIVE UPLOAD</title>
 <style>
 *{box-sizing:border-box;font-family:system-ui}body{background:#000;color:#fff;margin:0;padding:10px}
 .card{background:#111;border:1px solid #333;border-radius:14px;padding:16px;margin:10px 0}
@@ -19,38 +19,31 @@ input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;ba
 </style>
 </head>
 <body>
-
 <div id="ageGate" class="card" style="text-align:center;max-width:400px;margin:30px auto;border:2px solid #FFD700">
 <h2 style="color:#FFD700;margin:0">🔞 18+ ONLY - ID VERIFY</h2>
-<p class="small">Faka ID - 30 sec only - ID ayigcinwa</p>
+<p class="small">Faka ID - 30 sec only</p>
 <input id="idNumber" placeholder="9001015800088" maxlength="13" style="text-align:center;font-size:20px;letter-spacing:2px;border:2px solid #FFD700">
 <button class="btn" onclick="verifyID()" id="verifyBtn">🔍 Verify 18+ (13 digits)</button>
 <p id="idMsg" style="font-weight:bold;margin-top:10px"></p>
 <p id="idTimer" style="color:#00FF88;font-size:12px"></p>
 </div>
-
 <div id="loginView" class="card" style="display:none;text-align:center;max-width:450px;margin:20px auto">
-<h1 style="color:#FFD700;margin:0">ISANGO VAULT 🔞</h1><p class="small">18+ LIVE - Abadala Kuphela</p>
+<h1 style="color:#FFD700;margin:0">ISANGO VAULT 🔞</h1><p class="small">18+ LIVE UPLOAD</p>
 <div style="border:2px solid #FFD700;border-radius:14px;padding:14px;margin:12px 0;background:#0a0a0a">
-<p style="color:#FFD700;font-weight:900;margin:0">👁️ LINK 2 - CREATORS → VIEWERS</p>
-<p class="small">Voucher kuphela + 🔴 LIVE + Ama-Video</p>
+<p style="color:#FFD700;font-weight:900;margin:0">👁️ LINK 2 - VIEWERS</p>
 <input id="vcode" placeholder="0000 0000 0000 0000" style="text-align:center;font-size:20px;letter-spacing:2px">
 <button class="btn" onclick="viewerUnlock()">🔓 Unlock - Buka 18+ & LIVE</button>
 <div style="border:1px solid #333;border-radius:8px;padding:8px;margin-top:8px;text-align:left">
 <p style="color:#FFD700;font-size:11px;font-weight:bold">🔞 Ozokuvula:</p>
-<p class="small">• 🔴 LIVE - Bukhoma Manje</p>
-<p class="small">• 18+ Exclusive Videos - Abadala kuphela</p>
-<p class="small">• Private - Okuyimfihlo</p>
+<p class="small">• 🔴 LIVE • 🎬 Ama-Video a-Upload-iwe</p>
 </div>
 </div>
 <div style="opacity:0.2">━━━ OR ━━━</div>
 <div style="border:2px solid #fff;border-radius:14px;padding:14px;margin:12px 0;background:#111">
-<p style="font-weight:900;margin:0">👑 LINK 1 - EYAKHO (OWNER)</p>
+<p style="font-weight:900;margin:0">👑 LINK 1 - OWNER</p>
 <button class="btn" onclick="ownerLogin()" style="background:#fff;color:#000">👑 OWNER DASHBOARD</button>
-<p class="small" style="color:#FFD700">?role=owner - No voucher</p>
 </div>
 </div>
-
 <div id="dash" style="display:none">
 <div style="display:flex;justify-content:space-between;align-items:center">
 <h2 style="color:#FFD700">VAULT <span class="ownerTag">OWNER</span></h2>
@@ -58,24 +51,23 @@ input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;ba
 </div>
 <div style="margin:10px 0">
 <span class="tab active" id="t-overview" onclick="tab('overview')">📊 Overview</span>
-<span class="tab" id="t-creators" onclick="tab('creators')">🎬 Creators</span>
+<span class="tab" id="t-creators" onclick="tab('creators')">🎬 Creators + Upload</span>
 <span class="tab" id="t-payouts" onclick="tab('payouts')">💰 Payouts</span>
 </div>
 <div id="view-overview" class="card">
-<h3>MY Business Account (OWNER) 🔞</h3>
+<h3>MY Business (OWNER) 🔞</h3>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<div class="card" style="margin:0;background:#1a1a00;border-color:#FFD700"><p class="small">TOTAL REVENUE</p><h2 style="color:#FFD700;margin:0">R 12,450</h2><p class="small">FNB • 6283*** 1234</p><span class="ownerTag">MY ACCOUNT</span></div>
+<div class="card" style="margin:0;background:#1a1a00;border-color:#FFD700"><p class="small">TOTAL REVENUE</p><h2 style="color:#FFD700;margin:0">R 12,450</h2><p class="small">FNB • 6283***</p><span class="ownerTag">MY ACCOUNT</span></div>
 <div class="card" style="margin:0"><p class="small">Active 18+</p><h2 style="margin:0">248</h2><p class="small">Vouchers</p></div>
 </div>
 <div class="card" style="margin:10px 0;background:#1a0000;border-color:#FF0000">
-<p class="small" style="color:#FF0000;font-weight:900">🔴 LIVE CONTROL (Owner)</p>
-<button class="btn" style="background:#FF0000;color:#fff" onclick="alert('🔴 LIVE Started - All viewers bazoyibona!');localStorage.setItem('live_on','1')">🔴 START LIVE - Qala Bukhoma</button>
+<p class="small" style="color:#FF0000;font-weight:900">🔴 LIVE CONTROL</p>
+<button class="btn" style="background:#FF0000;color:#fff" onclick="alert('🔴 LIVE Started!');localStorage.setItem('live_on','1')">🔴 START LIVE</button>
 <button class="btn" style="background:#222;color:#fff" onclick="localStorage.setItem('live_on','0');alert('LIVE Off')">Stop Live</button>
-<p class="small">Qala live - Abalandeli bazobona 🔴 LIVE button</p>
 </div>
 </div>
 <div id="view-creators" class="card" style="display:none">
-<h3>🎬 Creators - 2 Types 🔞</h3>
+<h3>🎬 Creators - 2 Types + Video Upload 🔞</h3>
 <div class="card" style="border-color:#FFD700;background:#0a0a0a">
 <h4>➕ Add Creator 18+</h4>
 <input id="crName" placeholder="Full Name"><input id="crPhone" placeholder="Phone 082 123 4567">
@@ -95,13 +87,11 @@ input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;ba
 </div>
 <div id="view-payouts" class="card" style="display:none"><h3>💰 Payouts</h3><div id="payoutList" class="small"></div></div>
 </div>
-
 <div id="viewerView" class="card" style="display:none;text-align:center">
 <h2 style="color:#FFD700">✅ Verified - 18+ 🔞</h2>
 <div id="viewerContent"></div>
 <button class="btn" style="background:#222;color:#fff;margin-top:10px" onclick="location.reload()">Phuma</button>
 </div>
-
 <script>
 let creators=JSON.parse(localStorage.getItem('vault_creators')||'[]');
 function toggleBank(){document.getElementById('bankFields').style.display=document.getElementById('crType').value==='bank'?'block':'none';}
@@ -115,32 +105,53 @@ if(isNaN(age)||mm>12){msg.style.color='red';msg.innerText='❌ ID ayilungile';re
 if(age<18){msg.style.color='red';msg.innerText='❌ 18+ Only - Age: '+age;return;}
 msg.style.color='#00FF88';msg.innerText='✅ Age: '+age+' - 18+ OK';document.getElementById('verifyBtn').style.display='none';
 let sec=30,timerEl=document.getElementById('idTimer');
-let interval=setInterval(()=>{timerEl.innerText='⏱️ Ivaliwe ngemva kwa '+sec+' sec - ID isusiwe...';sec--;if(sec<0){clearInterval(interval);document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='block';document.getElementById('idNumber').value='';}},1000);
+let interval=setInterval(()=>{timerEl.innerText='⏱️ Ivaliwe ngemva kwa '+sec+' sec...';sec--;if(sec<0){clearInterval(interval);document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='block';document.getElementById('idNumber').value='';}},1000);
 }
 function ownerLogin(){document.getElementById('ageGate').style.display='none';document.getElementById('loginView').style.display='none';document.getElementById('dash').style.display='block';render();tab('overview');}
+function uploadVideo(creatorId,fileInput){
+let file=fileInput.files[0];if(!file)return;
+if(file.size>50*1024*1024){alert('❌ Video inkulu! Max 50MB');return;}
+let reader=new FileReader();
+reader.onload=function(e){
+let videos=JSON.parse(localStorage.getItem('vault_videos_'+creatorId)||'[]');
+videos.push({name:file.name,size:(file.size/1024/1024).toFixed(2)+'MB',data:e.target.result,[STRIPPED] Date().toLocaleDateString(),views:0});
+localStorage.setItem('vault_videos_'+creatorId,JSON.stringify(videos));
+alert('✅ Video i-upload-ile! '+file.name);render();
+};reader.readAsDataURL(file);
+}
+function deleteVideo(creatorId,index){
+let videos=JSON.parse(localStorage.getItem('vault_videos_'+creatorId)||'[]');videos.splice(index,1);
+localStorage.setItem('vault_videos_'+creatorId,JSON.stringify(videos));render();
+}
 function viewerUnlock(){
 let c=document.getElementById('vcode').value.replace(/\s/g,'');if(c.length<12){alert('Faka voucher 16 digits');return;}
 document.getElementById('loginView').style.display='none';document.getElementById('viewerView').style.display='block';
-let creator=new URLSearchParams(location.search).get('creator')||'General';let isLive=localStorage.getItem('live_on')==='1';
+let creatorId=new URLSearchParams(location.search).get('creator')||'General';
+let creator=creators.find(x=>x.id==creatorId);let creatorName=creator?creator.name:creatorId;
+let videos=JSON.parse(localStorage.getItem('vault_videos_'+creatorId)||'[]');
+let isLive=localStorage.getItem('live_on')==='1';let videoListHtml='';
+if(videos.length==0){videoListHtml=`<div class="card" style="background:#1a0000;border-color:#FF0000"><p style="color:#FF0000">❌ Akakafaki video</p></div>`;}else{
+videos.forEach((v,i)=>{
+videoListHtml+=`<div class="card" style="background:#000;margin:6px 0;text-align:left">
+<div style="display:flex;justify-content:space-between"><b>🔞 ${v.name}</b><span class="small">${v.size}</span></div>
+<p class="small" style="margin:4px 0">${v.date} • 18+ Exclusive</p>
+<video controls style="width:100%;border-radius:8px;background:#000;margin:4px 0" src="${v.data}"></video>
+<button class="btn" style="width:auto;padding:8px 14px;margin-top:6px" onclick="this.previousElementSibling.play()">▶️ Play 18+</button>
+</div>`;
+});
+}
 document.getElementById('viewerContent').innerHTML=`
 <div style="border:2px solid #FFD700;border-radius:12px;padding:15px;background:#0a0a0a;text-align:left">
 <div style="display:flex;justify-content:space-between;align-items:center">
-<h3 style="color:#FFD700;margin:0">🔞 ${creator}</h3>
+<h3 style="color:#FFD700;margin:0">🔞 ${creatorName}</h3>
 <button class="liveBtn" onclick="goLive()">🔴 LIVE</button>
 </div>
-<p class="small" style="color:#FFD700">Voucher: ...${c.slice(-4)} ${isLive?'<span style="color:#FF0000">● LIVE ON</span>':''}</p>
+<p class="small" style="color:#FFD700">Voucher:...${c.slice(-4)} ${isLive?'<span style="color:#FF0000">● LIVE ON</span>':''} • ${videos.length} Videos</p>
 <div id="liveBox" style="display:${isLive?'block':'none'};border:2px solid #FF0000;border-radius:12px;padding:12px;background:#1a0000;margin:10px 0;text-align:center">
-<p style="color:#FF0000;font-weight:900;margin:0">🔴 LIVE NOW - BUKHOMA MANJE!</p>
-<p class="small" style="color:#fff">${creator} ubukhoma - 18+ Live Stream</p>
-<button class="btn" style="background:#FF0000;color:#fff" onclick="alert('🔴 Joined LIVE - ${creator} 18+')">🔴 JOYINA LIVE - WATCH NOW</button>
-<p class="small" style="color:#FF0000">● 124 watching • 18+ Only</p>
+<p style="color:#FF0000;font-weight:900;margin:0">🔴 LIVE NOW - BUKHOMA!</p>
+<button class="btn" style="background:#FF0000;color:#fff" onclick="alert('🔴 Joined LIVE - ${creatorName}')">🔴 JOYINA LIVE</button>
 </div>
-<div style="display:grid;gap:10px;margin-top:12px">
-<div class="card" style="background:#000;margin:0"><p style="margin:0">🔞 Video 1 - 18+ [12:34]</p><button class="btn" style="width:auto;padding:8px 14px;margin-top:6px">▶️ Play</button></div>
-<div class="card" style="background:#000;margin:0"><p style="margin:0">🔞 Video 2 - 18+ [08:21]</p><button class="btn" style="width:auto;padding:8px 14px;margin-top:6px">▶️ Play</button></div>
-<div class="card" style="background:#000;margin:0"><p style="margin:0">🔴 LIVE Replay [15:02]</p><button class="btn" style="width:auto;padding:8px 14px;margin-top:6px;background:#FF0000;color:#fff">🔴 Play Replay</button></div>
-</div>
-<p class="small" style="text-align:center;margin-top:10px;color:#FFD700">🔞 18+ Adults Only</p>
+<div style="margin-top:12px">${videoListHtml}</div>
 </div>`;
 }
 function goLive(){let b=document.getElementById('liveBox');b.style.display=b.style.display==='none'?'block':'none';}
@@ -148,14 +159,26 @@ function tab(t){document.querySelectorAll('[id^=view-]').forEach(d=>d.style.disp
 function addCreator(){
 let name=document.getElementById('crName').value;if(!name){alert('Faka igama');return;}
 creators.push({id:Date.now().toString().slice(-5),name,phone:document.getElementById('crPhone').value,type:document.getElementById('crType').value,bank:document.getElementById('crBank').value,acc:document.getElementById('crAcc').value,wallet:document.getElementById('crWallet').value,wnum:document.getElementById('crWNum').value,perc:document.getElementById('crPerc').value});
-localStorage.setItem('vault_creators',JSON.stringify(creators));render();document.getElementById('crName').value='';alert('✅ Saved! Link: ?creator='+creators[creators.length-1].id+'&role=viewer');
+localStorage.setItem('vault_creators',JSON.stringify(creators));render();document.getElementById('crName').value='';alert('✅ Saved! Link:?creator='+creators[creators.length-1].id+'&role=viewer');
 }
 function render(){
 let html='',pay='';if(creators.length==0){html='<p class="small">Awukafaki...</p>';}else{creators.forEach(c=>{
 let tag=c.type==='bank'?'<span class="bankTag">🏦 UNE BANK</span>':'<span class="walletTag">📱 AKANAYO - eWALLET</span>';
-let bankInfo=c.type==='bank'?c.bank+' • '+c.acc:'No Bank - '+c.wallet;let link=location.origin+location.pathname+'?creator='+c.id+'&role=viewer';
-html+=`<div class="card" style="margin:8px 0;background:#000"><b>${c.name}</b> ${tag}<br><span class="small">${bankInfo}<br>${c.wallet} - ${c.wnum} - ${c.perc}%</span><br><div style="background:#111;padding:8px;border-radius:8px;margin-top:6px"><span class="small" style="color:#FFD700">🔗 Link:</span><br><span style="font-size:11px;color:#00FF88;word-break:break-all">${link}</span><br><button onclick="navigator.clipboard.writeText('${link}')" style="background:#FFD700;color:#000;border:0;padding:4px 8px;border-radius:6px;margin-top:4px;font-size:11px">Copy</button></div></div>`;
-pay+=`<div class="card" style="margin:6px 0"><b>${c.name}</b> ${tag}<br><span class="small">${c.type==='bank'?c.bank+' '+c.acc:c.wallet+' '+c.wnum} - R ${c.perc*10}</span> <button class="btn" style="width:auto;padding:6px 12px;font-size:12px" onclick="alert('Paid to ${c.name}')">Pay Now</button></div>`;
+let bankInfo=c.type==='bank'?c.bank+' • '+c.acc:'No Bank - '+c.wallet;
+let link=location.origin+location.pathname+'?creator='+c.id+'&role=viewer';
+let videos=JSON.parse(localStorage.getItem('vault_videos_'+c.id)||'[]');let videoHtml=videos.length==0?'<p class="small" style="color:#FF0000">❌ Awukafaki video</p>':'';
+videos.forEach((v,i)=>{videoHtml+=`<div style="background:#111;border:1px solid #333;border-radius:8px;padding:8px;margin:4px 0;display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:11px">🎬 ${v.name}</p><p class="small" style="margin:0">${v.size} • ${v.date}</p></div><button onclick="deleteVideo('${c.id}',${i})" style="background:#FF0000;color:#fff;border:0;padding:4px 8px;border-radius:6px;font-size:10px">Susa</button></div>`;});
+html+=`<div class="card" style="margin:8px 0;background:#000;border:2px solid #FFD700"><b>${c.name}</b> ${tag}<br><span class="small">${bankInfo}<br>${c.wallet} - ${c.wnum} - ${c.perc}%</span><br>
+<div style="background:#0a0a0a;border:2px dashed #FFD700;border-radius:10px;padding:10px;margin-top:8px">
+<p style="color:#FFD700;font-weight:900;margin:0;font-size:12px">🎬 UPLOAD AMA VIDEO - ${c.name}</p>
+<input type="file" accept="video/*" onchange="uploadVideo('${c.id}',this)" style="margin:6px 0;border:1px solid #FFD700">
+<p class="small">Max 50MB - MP4, MOV</p>
+<div style="max-height:150px;overflow-y:auto">${videoHtml}</div>
+<p class="small" style="color:#00FF88">✅ ${videos.length} videos</p>
+</div>
+<div style="background:#111;padding:8px;border-radius:8px;margin-top:6px"><span class="small" style="color:#FFD700">🔗 Link yakhe:</span><br><span style="font-size:11px;color:#00FF88;word-break:break-all">${link}</span><br><button onclick="navigator.clipboard.writeText('${link}')" style="background:#FFD700;color:#000;border:0;padding:4px 8px;border-radius:6px;margin-top:4px;font-size:11px">Copy Link</button></div>
+</div>`;
+pay+=`<div class="card" style="margin:6px 0"><b>${c.name}</b> ${tag} - ${videos.length} vids<br><span class="small">${c.type==='bank'?c.bank+' '+c.acc:c.wallet+' '+c.wnum} - R ${c.perc*10}</span> <button class="btn" style="width:auto;padding:6px 12px;font-size:12px" onclick="alert('Paid to ${c.name}')">Pay Now</button></div>`;
 });}
 document.getElementById('creatorList').innerHTML=html;document.getElementById('payoutList').innerHTML=pay||'...';
 }
