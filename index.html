@@ -1,76 +1,48 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT FINAL BUSINESS</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:10px}.h{display:flex;justify-content:space-between;align-items:center}.logo{font-size:28px;font-weight:900;color:#d4af37}.badge{background:#d4af37;color:#000;padding:4px 10px;border-radius:20px;font-weight:800;font-size:10px}.tabs{display:flex;gap:5px;margin:10px 0;overflow:auto}.tab{padding:8px 12px;border-radius:20px;border:none;font-weight:700;white-space:nowrap;font-size:11px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.stat{border:2px solid #d4af37;border-radius:10px;padding:8px;text-align:center;flex:1}.stats{display:flex;gap:6px}.biz{color:#d4af37;font-weight:900} video{width:100%;border-radius:10px;background:#000;margin:5px 0;max-height:300px} input,select{width:100%;padding:11px;margin:5px 0;background:#111;color:#fff;border:1px solid #d4af37;border-radius:9px;font-size:13px}.b{width:100%;padding:12px;border:none;border-radius:9px;font-weight:900;margin:5px 0;font-size:12px}.g{background:#0a0;color:#fff}.y{background:#d4af37;color:#000}.r{background:red;color:#fff}.box{background:#222;padding:9px;margin:6px 0;border-radius:9px;border:1px solid #333;font-size:13px}.green{color:#0f0;font-weight:800}.ini{width:40px;height:40px;border-radius:50%;background:#000;border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;color:#d4af37;font-weight:900;font-size:14px}.tuck{background:linear-gradient(135deg,#d4af37,#a67c00);color:#000;padding:12px;border-radius:12px;margin:8px 0;font-weight:800}.cash{background:#0a3;color:#fff;padding:8px;border-radius:8px;margin:4px 0}</style></head><body>
-<div class=h><div><span class=logo>VAULT</span> <span class=badge>FINAL BUSINESS</span></div><button style="background:#222;color:#888;border:none;padding:5px 10px;border-radius:20px;font-size:11px">Owner</button></div>
-<div class=tabs><button class="tab a" id=t0 onclick="show('ov',0)">📊 Overview</button><button class="tab" id=t1 onclick="show('cre',1)">🎬 Performers</button><button class="tab" id=t2 onclick="show('vid',2)">📹 Videos</button><button class="tab" id=t3 onclick="show('vouch',3)">🎫 Vouchers</button><button class="tab" id=t4 onclick="show('pay',4)">💰 Business</button></div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT MANUAL TYMEBANK</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:12px}.logo{font-size:28px;font-weight:900;color:#d4af37}.tabs{display:flex;gap:5px;margin:10px 0;overflow:auto}.tab{padding:8px 14px;border-radius:20px;border:none;font-weight:700;font-size:11px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.tuck{background:linear-gradient(135deg,#d4af37,#a67c00);color:#000;padding:14px;border-radius:12px;margin:8px 0;font-weight:800;font-size:14px} input,select{width:100%;padding:14px;margin:7px 0;background:#111;color:#fff;border:2px solid #d4af37;border-radius:10px;font-size:15px} .b{width:100%;padding:14px;border:none;border-radius:10px;font-weight:900;margin:7px 0;font-size:13px}.y{background:#d4af37;color:#000}.g{background:#0a0;color:#fff}.box{background:#222;padding:10px;margin:6px 0;border-radius:9px;border:1px solid #333}</style></head><body>
+<div style="display:flex;justify-content:space-between"><span class=logo>VAULT</span><span style="background:#d4af37;color:#000;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800">MANUAL ADD</span></div>
+<div class=tabs><button class="tab a" id=t0 onclick="show('ov',0)">📊 Overview</button><button class="tab" id=t1 onclick="show('biz',1)">💰 Add Business</button><button class="tab" id=t2 onclick="show('cre',2)">🎬 Performers</button><button class="tab" id=t3 onclick="show('vouch',3)">🎫 Vouchers</button></div>
 
 <div id=ov class=card>
-<h3>🏦 Yakho Trading - MY Business Account (OWNER) 🔞🎤</h3>
-<div class=tuck>💼 BUSINESS ACCOUNT YAKHO - VAULT OWNER<br>🏦 Bank: FNB Business<br>💳 Account: <b style="font-size:18px">6209 1184 5543</b><br>📱 Last: 5543 • Verified ✅ • Owner Payouts</div>
-<div class=stats><div class=stat><small>TOTAL REVENUE</small><br><b style="color:#d4af37">R 12,450</b></div><div class=stat><small>Vouchers Sold</small><br><b style="color:#d4af37">248</b></div><div class=stat><small>Performers</small><br><b id=pcnt style="color:#d4af37">0</b></div></div>
-<div style="border:2px solid red;border-radius:12px;padding:10px;margin:10px 0;background:#1a0a0a">
-<b style="color:red">🔴 LIVE CONTROL + CAMERA + MIC</b><br>
-<video id=cam autoplay muted playsinline></video><br>
-<button class="b" style="background:#333;color:#fff" id=camBtn onclick="openCam()">📷🎤 VULA CAMERA + MIC</button>
-<button class="b g" id=micBtn onclick="toggleMic()">🎤 Mic ON</button>
-<button class="b r" onclick="startLive()">🔴 START LIVE</button>
-<button class="b" style="background:#222;color:#888" onclick="stopLive()">⏹️ Stop</button>
-<div id=ls class=green></div>
-</div>
+<h3>🏦 MY BUSINESS - Overview</h3>
+<div id=showBiz class=tuck>Akukho Business Account - Hamba ku Add Business → Faka TymeBank Yakho Manually!</div>
 </div>
 
-<div id=cre class=card style=display:none>
-<h2>Performers + Bank / CashSend</h2>
-<p style="color:#888;font-size:11px">Add performer + bank details OR cash send if no bank</p>
-<div style="background:#111;border:1px solid #222;border-radius:12px;padding:10px;margin:8px 0">
-<b style="color:#d4af37">Add New Performer + Payout Method</b><br>
-<input id=pn placeholder="Igama - Thando">
-<input id=pp placeholder="Phone - 071...">
-<select id=ptype onchange="toggleBank()"><option value=bank>🏦 Bank Account</option><option value=cash>💸 No Bank - Instant CashSend / eWallet</option></select>
-<div id=bankFields><input id=pbname placeholder="Bank - FNB / Capitec / ABSA"><input id=pacc placeholder="Account Number - 123456789"><input id=pbranch placeholder="Branch Code - 250655"></div>
-<div id=cashFields style=display:none><div class=cash>💸 CashSend - Izoya ku phone yakhe - No bank needed!</div><input id=pcash placeholder="CashSend Phone - 071... (same or different)"></div>
-<button class="b g" onclick="addP()">+ Add Performer + Save Bank/CashSend</button>
-</div>
-<div id=pl></div>
+<div id=biz class=card style=display:none>
+<h2 style="color:#d4af37">💰 FAKA BUSINESS ACCOUNT YAKHO MANUALLY</h2>
+<p style="color:#888;font-size:12px">Faka wena - Manual - TymeBank Yakho - Izogcina efonini yakho kuphela!</p>
+
+<div style="background:#000;border:2px solid #d4af37;border-radius:14px;padding:14px;margin:12px 0">
+<label style="color:#d4af37;font-size:13px;font-weight:800">1. Business Name:</label>
+<input id=bname placeholder="Example: Yakho Trading - Faka igama le business yakho">
+
+<label style="color:#d4af37;font-size:13px;font-weight:800">2. Khetha Bank:</label>
+<select id=bbank><option>TymeBank</option><option>Capitec</option><option>FNB</option><option>ABSA</option><option>Standard Bank</option></select>
+
+<label style="color:#d4af37;font-size:13px;font-weight:800">3. Account Number Yakho - Faka Manually Lapha:</label>
+<input id=bacc placeholder="Faka account number yakho lapha - 5100..." style="font-size:20px;font-weight:900;letter-spacing:2px;text-align:center;border:2px solid #0f0">
+
+<label style="color:#d4af37;font-size:13px;font-weight:800">4. Branch Code:</label>
+<input id=bbranch placeholder="TymeBank: 678910 - Faka lapha" value="678910">
+
+<label style="color:#d4af37;font-size:13px;font-weight:800">5. Phone:</label>
+<input id=bphone placeholder="071... - Faka phone yakho">
+
+<button class="b y" onclick="saveBiz()" style="font-size:16px;margin-top:14px">💾 SAVE - GCINA BUSINESS ACCOUNT YAMI MANJE</button>
+<div id=msg style="text-align:center;margin-top:10px;font-weight:800"></div>
 </div>
 
-<div id=vid class=card style=display:none>
-<b>📹 FAKA VIDEO - Per Performer</b><br><select id=sel></select><input type=file id=vf accept="video/*" onchange="upV(this)"><div id=vl></div>
+<div id=bizList></div>
 </div>
 
-<div id=vouch class=card style=display:none>
-<h2>🎫 VOUCHER SYSTEM - Supermarket / Tuckshop</h2>
-<div class=tuck>🛒 VIEWER THENGISA KANJANI:<br>1. Hamba Shoprite / Pick n Pay / Spaza / Tuckshop<br>2. Cela "VAULT Voucher R50"<br>3. Thola PIN 8 digits on receipt<br>4. Faka PIN ngezansi ku App → Verify → Buka! 🔓</div>
-<button class="b y" onclick="genV()">🎫 Generate New Voucher PIN - R50 - For Tuckshop</button>
-<div id=vlist></div>
-<div style="background:#111;border:2px dashed #d4af37;border-radius:12px;padding:12px;margin:12px 0">
-<b style="color:#d4af37">📱 VIEWER - Faka PIN Yakho Uthengile e Shop:</b><br>
-<input id=pin placeholder="Faka PIN 8 digits - Example: 45891234" style="font-size:18px;letter-spacing:3px;text-align:center">
-<button class="b r" onclick="usePin()">🔓 VERIFY PIN - Vula Amavideo + Live + Mic</button>
-<div id=vmsg></div>
-</div>
-<div class=box style="color:#888;font-size:11px">💡 Owner: Print vouchers → Dayisa e Spaza → R50 → R20 wakho R30 ye business (6209 1184 5543)</div>
-</div>
-
-<div id=pay class=card style=display:none>
-<h2>💰 BUSINESS ACCOUNT YAMI + PERFORMER PAYOUTS</h2>
-<div class=tuck>🏦 Yakho Trading<br>💳 <b style="font-size:20px">6209 1184 5543</b><br>🏦 FNB Business - Last 5543<br>💰 Owner Revenue: R12,450<br>✅ Verified Business Account</div>
-<b>Amaphefoma - Ama Bank Details Wabo:</b>
-<div id=payList></div>
-<div class=box><b>💸 Payout Options:</b><br>🏦 Bank EFT - Performer ne bank<br>💸 Instant CashSend - Performer engena bank - Thumela ku phone<br>💵 Cash e Tuckshop - Viewer thenga voucher</div>
-</div>
+<div id=cre class=card style=display:none><h2>🎬 Performers</h2><input id=pn placeholder="Igama"><input id=pp placeholder="Phone 071..."><button class="b g" onclick="addP()">+ Add Performer</button><div id=pl></div></div>
+<div id=vouch class=card style=display:none><h2>🎫 Vouchers</h2><button class="b y" onclick="genV()">Generate PIN R50</button><div id=vlist></div><input id=pin placeholder="Faka PIN"><button class="b g" onclick="usePin()">Verify PIN</button><div id=vmsg></div></div>
 
 <script>
-let stream=null;
-function show(id,i){['ov','cre','vid','vouch','pay'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));document.getElementById('t'+i).classList.add('a');render();}
-async function openCam(){let b=document.getElementById('camBtn');b.innerHTML='⏳ Ivula...';try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});let v=document.getElementById('cam');v.srcObject=stream;await v.play();b.innerHTML='✅ Camera + Mic Vuliwe!';document.getElementById('ls').innerHTML='📷🎤 LIVE Ready!';}catch(e){b.innerHTML='📷🎤 VULA';alert('Vumela Camera+Mic ALLOW\n'+e.message);}}
-function toggleMic(){if(!stream)return alert('Vula Camera!');let a=stream.getAudioTracks()[0];if(!a)return;a.enabled=!a.enabled;let btn=document.getElementById('micBtn');btn.innerHTML=a.enabled?'🎤 Mic ON':'🔇 Mic OFF';btn.style.background=a.enabled?'#0a0':'#a00';}
-function startLive(){if(!stream)return alert('Vula Camera!');document.getElementById('ls').innerHTML='🔴 LIVE + 🎤 - Bukhoma!';}
-function stopLive(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;document.getElementById('cam').srcObject=null;}document.getElementById('camBtn').innerHTML='📷🎤 VULA';document.getElementById('ls').innerHTML='⏹️ Stopped';}
-function toggleBank(){let t=document.getElementById('ptype').value;document.getElementById('bankFields').style.display=t=='bank'?'block':'none';document.getElementById('cashFields').style.display=t=='cash'?'block':'none';}
-function addP(){if(!pn.value.trim())return alert('Faka igama!');let type=document.getElementById('ptype').value;let p=JSON.parse(localStorage.P||'[]');let bankInfo=type=='bank'?{type:'bank',bank:pbname.value,acc:pacc.value,branch:pbranch.value}:{type:'cash',cashPhone:pcash.value||pp.value};p.push({name:pn.value.trim(),phone:pp.value.trim(),bankInfo:bankInfo,id:Date.now()});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';pbname.value='';pacc.value='';pbranch.value='';pcash.value='';render();alert('✅ '+p[p.length-1].name+' Added! Payout: '+(type=='bank'?'Bank '+bankInfo.acc:'CashSend '+bankInfo.cashPhone));}
-function upV(inp){let f=inp.files[0];if(!f)return;if(!sel.value)return alert('Khetha Performer!');let url=URL.createObjectURL(f);let V=JSON.parse(localStorage.V||'[]');V.unshift({perf:sel.value,name:f.name,url:url,time:new Date().toLocaleString()});localStorage.V=JSON.stringify(V);render();alert('✅ Video ka '+sel.value+' ifakiwe!');}
-function genV(){let c=Math.floor(10000000+Math.random()*90000000).toString();let v=JSON.parse(localStorage.VC||'[]');v.push({code:c,used:false,price:50});localStorage.VC=JSON.stringify(v);render();}
-function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='<div class=box style=color:red>❌ PIN ayilungile! Hlola receipt e Shop - 8 digits</div>';return;}if(f.used){vmsg.innerHTML='<div class=box style=color:orange>⚠️ PIN Used - Seyisetshenzisiwe!</div>';return;}f.used=true;localStorage.VC=JSON.stringify(v);localStorage.ACCESS='true';vmsg.innerHTML='<div class=box style=color:#0f0;font-size:16px">✅ PIN Verified! 🔓 Voucher R50 Vuliwe! Buka Videos + Live + Mic MANJE!<br><small>Thenga futhi e Tuckshop uma iphelile</small></div>';render();}
-function getIni(n){return n.split(' ').map(x=>x[0]).join('').substring(0,2).toUpperCase();}
-function render(){let P=JSON.parse(localStorage.P||'[]');document.getElementById('pcnt').innerHTML=P.length;let pl=document.getElementById('pl');if(P.length==0){pl.innerHTML='<div class=box style=text-align:center;color:#888>Akukho performer - Faka ngenhla</div>';}else{pl.innerHTML=P.map(x=>{let b=x.bankInfo;let payout=b.type=='bank'?'🏦 '+b.bank+' - '+b.acc:'💸 CashSend - '+b.cashPhone;return '<div class=box style=display:flex;gap:10px;align-items:center"><div class=ini>'+getIni(x.name)+'</div><div style=flex:1><b>'+x.name+'</b><br><small>📱 '+x.phone+'</small><br><small style=color:'+(b.type=='bank'?'#d4af37':'#0f0')+'>'+payout+'</small><br><small style=color:#0f0>● Camera Ready</small></div><div>›</div></div>';}).join('');}sel.innerHTML=P.map(x=>'<option value="'+x.name+'">'+x.name+'</option>').join('')||'<option>Faka performer kuqala</option>';let V=JSON.parse(localStorage.V||'[]');let has=localStorage.ACCESS=='true';vl.innerHTML=V.map(v=>'<div class=box><b>👑 '+v.perf+'</b> - '+v.name+'<br>'+(has?'<video src="'+v.url+'" controls style=width:100%;border-radius:8px;margin:5px 0></video>':'<div style=background:#000;padding:15px;text-align:center;border-radius:8px>🔒 Faka Voucher PIN ku Vouchers tab</div>')+'<br><small>'+v.time+'</small></div>').join('')||'Akukho video';let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 VAULT R50 PIN: <b style=color:gold;font-size:18px;letter-spacing:2px">'+v.code+'</b> - '+(v.used?'Used ✅':'Active 🟢 - Dayisa e Shop')+'<br><small>🛒 Tuckshop: Dayisa le PIN - Viewer faka ku App</small></div>').join('')||'Akukho voucher - Generate';let payL=document.getElementById('payList');if(P.length==0){payL.innerHTML='<div class=box>No performers</div>';}else{payL.innerHTML=P.map(x=>{let b=x.bankInfo;return '<div class=box">👑 <b>'+x.name+'</b><br>'+(b.type=='bank'?'🏦 Bank: '+b.bank+'<br>💳 Acc: '+b.acc+'<br>🏦 Branch: '+b.branch:'💸 No Bank - CashSend: '+b.cashPhone+'<br>💸 Instant EWallet')+'<br>📱 Phone: '+x.phone+'</div>';}).join('');}}
-render();toggleBank();
+function show(id,i){['ov','biz','cre','vouch'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));document.getElementById('t'+i).classList.add('a');render();}
+function saveBiz(){if(!bacc.value.trim())return alert('Faka Account Number!');let biz={name:bname.value||'My Business',bank:bbank.value,acc:bacc.value.trim(),branch:bbranch.value,phone:bphone.value};localStorage.BIZ=JSON.stringify(biz);document.getElementById('msg').innerHTML='✅ SAVED! '+biz.bank+' - '+biz.acc+' - Ivela ku Overview!';render();setTimeout(()=>show('ov',0),1200);}
+function addP(){if(!pn.value)return alert('Faka igama');let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value,phone:pp.value});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();}
+function genV(){let c=Math.floor(10000000+Math.random()*90000000).toString();let v=JSON.parse(localStorage.VC||'[]');v.push({code:c,used:false});localStorage.VC=JSON.stringify(v);render();}
+function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='❌ PIN ayilungile';return;}f.used=true;localStorage.VC=JSON.stringify(v);vmsg.innerHTML='✅ Verified!';render();}
+function render(){let biz=JSON.parse(localStorage.BIZ||'null');if(!biz){document.getElementById('showBiz').innerHTML='❌ Akukho Business Account - Chofoza 💰 Add Business → Faka TymeBank Yakho Manually!';document.getElementById('bizList').innerHTML='';}else{document.getElementById('showBiz').innerHTML='💼 '+biz.name+'<br>🏦 Bank: '+biz.bank+'<br>💳 Account: <b style="font-size:20px">'+biz.acc+'</b><br>Branch: '+biz.branch+'<br>📱 '+biz.phone+'<br>✅ Saved Manually - Yeyakho!';document.getElementById('bizList').innerHTML='<div class=tuck>✅ SAVED MANUALLY:<br>🏦 '+biz.name+'<br>💳 '+biz.acc+'<br>🏦 '+biz.bank+' - '+biz.branch+'</div>';bname.value=biz.name;bbank.value=biz.bank;bacc.value=biz.acc;bbranch.value=biz.branch;bphone.value=biz.phone;}let P=JSON.parse(localStorage.P||'[]');pl.innerHTML=P.map(x=>'<div class=box>👑 '+x.name+' - '+x.phone+'</div>').join('')||'Akukho';let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 PIN: <b style=color:gold>'+v.code+'</b></div>').join('')||'';}
+render();
 </script></body></html>
