@@ -1,25 +1,34 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT FULL MIC</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:10px}.h{display:flex;justify-content:space-between;align-items:center}.logo{font-size:30px;font-weight:900;color:#d4af37}.badge{background:#d4af37;color:#000;padding:4px 12px;border-radius:20px;font-weight:800;font-size:11px}.tabs{display:flex;gap:6px;margin:12px 0;overflow:auto}.tab{padding:9px 14px;border-radius:20px;border:none;font-weight:700;white-space:nowrap;font-size:12px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.stat{border:2px solid #d4af37;border-radius:10px;padding:10px;text-align:center;flex:1}.stats{display:flex;gap:8px}.biz{color:#d4af37;font-weight:900} video{width:100%;border-radius:10px;background:#000;margin:6px 0;max-height:320px} input,select{width:100%;padding:10px;margin:5px 0;background:#000;color:#fff;border:1px solid #d4af37;border-radius:8px}.b{width:100%;padding:12px;border:none;border-radius:8px;font-weight:900;margin:5px 0}.g{background:#d4af37;color:#000}.r{background:red;color:#fff}.box{background:#222;padding:8px;margin:6px 0;border-radius:8px}.green{color:#0f0;font-weight:800}</style></head><body>
-<div class=h><div><span class=logo>VAULT</span> <span class=badge>OWNER + MIC</span></div><button style="background:#222;color:#888;border:none;padding:6px 12px;border-radius:20px">Logout</button></div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT PERFORMERS ADD</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:10px}.h{display:flex;justify-content:space-between;align-items:center}.logo{font-size:30px;font-weight:900;color:#d4af37}.badge{background:#d4af37;color:#000;padding:4px 12px;border-radius:20px;font-weight:800;font-size:11px}.tabs{display:flex;gap:6px;margin:12px 0;overflow:auto}.tab{padding:9px 14px;border-radius:20px;border:none;font-weight:700;white-space:nowrap;font-size:12px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.stat{border:2px solid #d4af37;border-radius:10px;padding:10px;text-align:center;flex:1}.stats{display:flex;gap:8px}.biz{color:#d4af37;font-weight:900} video{width:100%;border-radius:10px;background:#000;margin:6px 0;max-height:320px} input,select{width:100%;padding:12px;margin:6px 0;background:#111;color:#fff;border:1px solid #d4af37;border-radius:10px;font-size:14px}.b{width:100%;padding:13px;border:none;border-radius:10px;font-weight:900;margin:6px 0;font-size:13px}.g{background:#0a0;color:#fff}.r{background:red;color:#fff}.box{background:#222;padding:10px;margin:8px 0;border-radius:10px;border:1px solid #333}.green{color:#0f0;font-weight:800}.ini{width:44px;height:44px;border-radius:50%;background:#000;border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;color:#d4af37;font-weight:900;font-size:16px}</style></head><body>
+<div class=h><div><span class=logo>VAULT</span> <span class=badge>OWNER + ADD</span></div><button style="background:#222;color:#888;border:none;padding:6px 12px;border-radius:20px">Logout</button></div>
 <div class=tabs><button class="tab a" id=t0 onclick="show('ov',0)">📊 Overview</button><button class="tab" id=t1 onclick="show('cre',1)">🎬 Performers</button><button class="tab" id=t2 onclick="show('vid',2)">📹 Videos</button><button class="tab" id=t3 onclick="show('vouch',3)">🎫 Vouchers</button><button class="tab" id=t4 onclick="show('pay',4)">💰 Payouts</button></div>
 
 <div id=ov class=card>
-<h3>MY Business Account (OWNER) 🔞 + 🎤 Mic</h3>
+<h3>MY Business Account (OWNER) 🔞 + 🎤</h3>
 <div style="margin:8px 0"><span class=biz>🏦 Yakho Trading</span><br><b style="font-size:20px;color:#d4af37">6209 1184 5543</b><br><small>Last: 5543 • FNB • Business</small></div>
-<div class=stats><div class=stat><small>TOTAL REVENUE</small><br><b style="color:#d4af37;font-size:18px">R 12,450</b></div><div class=stat><small>Active 18+ Vouchers</small><br><b style="color:#d4af37;font-size:18px">248</b></div></div>
+<div class=stats><div class=stat><small>TOTAL REVENUE</small><br><b style="color:#d4af37;font-size:18px">R 12,450</b></div><div class=stat><small>Active Vouchers</small><br><b style="color:#d4af37;font-size:18px">248</b></div></div>
 <div style="border:2px solid red;border-radius:12px;padding:10px;margin:10px 0;background:#1a0a0a">
-<b style="color:red">🔴 LIVE CONTROL + CAMERA + MIC - Uzibona + Bayakuzwa!</b><br>
+<b style="color:red">🔴 LIVE CONTROL + CAMERA + MIC</b><br>
 <video id=cam autoplay muted playsinline></video><br>
-<button class="b" style="background:#333;color:#fff" id=camBtn onclick="openCam()">📷🎤 VULA CAMERA + MIC - Zibone + Khuluma</button>
-<button class="b" style="background:#0a0;color:#fff" id=micBtn onclick="toggleMic()">🎤 Mic ON - Bayakuzwa</button>
-<button class="b r" onclick="startLive()">🔴 START LIVE - Qala Bukhoma</button>
+<button class="b" style="background:#333;color:#fff" id=camBtn onclick="openCam()">📷🎤 VULA CAMERA + MIC</button>
+<button class="b g" id=micBtn onclick="toggleMic()">🎤 Mic ON - Bayakuzwa</button>
+<button class="b r" onclick="startLive()">🔴 START LIVE</button>
 <button class="b" style="background:#222;color:#888" onclick="stopLive()">⏹️ Stop Live</button>
 <div id=ls class=green></div>
 </div>
 </div>
 
 <div id=cre class=card style=display:none>
-<b>👑 Ama Performers - Namavideo + Live + Camera + Mic - Bazibona</b><br>
-<input id=pn placeholder="Igama - Thando"><input id=pp placeholder="Phone - 071..."><button class="b g" onclick="addP()">✅ Add Performer</button>
+<h2 style="font-size:22px;margin:6px 0">Performers</h2>
+<p style="color:#888;font-size:12px;margin-bottom:10px">Manage performers and their camera ready status</p>
+<div style="background:#111;border:1px solid #222;border-radius:14px;padding:12px;margin:10px 0">
+<b style="color:#d4af37">Add New Performer</b><br><br>
+<small style="color:#aaa">Performer Name</small>
+<input id=pn placeholder="Enter performer name - Thando">
+<small style="color:#aaa">Phone</small>
+<input id=pp placeholder="+1 (555) 000-0000 - 071...">
+<button class="b g" onclick="addP()">+ Add Performer</button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px 0"><b style="font-size:18px">Current Performers</b><span id=cnt style="border:1px solid #d4af37;color:#d4af37;padding:3px 10px;border-radius:20px;font-size:11px">0 Active</span></div>
 <div id=pl></div>
 </div>
 
@@ -27,31 +36,31 @@
 <b>📹 FAKA VIDEO - Per Performer</b><br>
 <select id=sel></select>
 <input type=file id=vf accept="video/*" onchange="upV(this)"><br>
-<small>1. Khetha Performer 2. Khetha Video efonini</small>
 <div id=vl></div>
 </div>
 
 <div id=vouch class=card style=display:none>
-<b>🎫 VOUCHER - Thenga e Supermarket / Spaza - Faka PIN - Buka</b><br>
-<button class="b g" onclick="genV()">🎫 Generate Voucher PIN - R50</button>
+<b>🎫 VOUCHER - Supermarket / Spaza</b><br>
+<button class="b" style="background:#d4af37;color:#000" onclick="genV()">🎫 Generate Voucher PIN - R50</button>
 <div id=vlist></div><br>
-<input id=pin placeholder="Faka PIN 8 digits"><button class="b r" onclick="usePin()">🔓 Vula Amavideo + Live + Mic</button>
+<input id=pin placeholder="Faka PIN 8 digits"><button class="b r" onclick="usePin()">🔓 Vula Amavideo + Live</button>
 <div id=vmsg></div>
 </div>
 
-<div id=pay class=card style=display:none><b>💰 Payouts - Yakho Trading 6209 1184 5543</b><br><div class=box>Bank: FNB - Last 5543 - Business<br>Total: R12,450<br>Vouchers: 248<br>Mic: Enabled ✅<br>Status: Verified ✅</div></div>
+<div id=pay class=card style=display:none><b>💰 Payouts - Yakho Trading 6209 1184 5543</b><br><div class=box>Total: R12,450 - Vouchers: 248 - Verified ✅</div></div>
 
 <script>
 let stream=null;
 function show(id,i){['ov','cre','vid','vouch','pay'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));document.getElementById('t'+i).classList.add('a');render();}
-async function openCam(){let b=document.getElementById('camBtn');b.innerHTML='⏳ Ivula Camera + Mic...';try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});let v=document.getElementById('cam');v.srcObject=stream;await v.play();b.innerHTML='✅ Camera + Mic Vuliwe - Uyazibona + Bayakuzwa!';document.getElementById('micBtn').innerHTML='🎤 Mic ON - Bayakuzwa';document.getElementById('micBtn').style.background='#0a0';document.getElementById('ls').innerHTML='📷🎤 LIVE Ready - Camera + Mic - Qala Bukhoma Manje!';}catch(e){b.innerHTML='📷🎤 VULA CAMERA + MIC';alert('Vumela Camera + Mic BOTH: Chofoza ALLOW ku Camera futhi ALLOW ku Microphone\n\nUma iMic ayivumi: Chrome > Settings > Site settings > Microphone > Allow\n\nError:'+e.message);}}
-function toggleMic(){if(!stream)return alert('Vula Camera + Mic kuqala!');let a=stream.getAudioTracks()[0];if(!a)return alert('Mic ayitholakali');a.enabled=!a.enabled;let btn=document.getElementById('micBtn');btn.innerHTML=a.enabled?'🎤 Mic ON - Bayakuzwa':'🔇 Mic OFF - Thula';btn.style.background=a.enabled?'#0a0':'#a00';document.getElementById('ls').innerHTML=a.enabled?'🎤 Mic ON - Bayakuzwa!':'🔇 Mic OFF - Uthule';}
-function startLive(){if(!stream)return alert('Vula Camera + Mic kuqala! 📷🎤');let L=JSON.parse(localStorage.L||'[]');L.unshift({title:'Owner LIVE + Mic',time:new Date().toLocaleString()});localStorage.L=JSON.stringify(L);document.getElementById('ls').innerHTML='🔴 LIVE + 🎤 MIC - Bukhoma + Bayakuzwa!';alert('🔴 LIVE + Mic Started!');}
-function stopLive(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;document.getElementById('cam').srcObject=null;}document.getElementById('camBtn').innerHTML='📷🎤 VULA CAMERA + MIC - Zibone + Khuluma';document.getElementById('ls').innerHTML='⏹️ LIVE Stopped';}
-function addP(){if(!pn.value)return alert('Faka igama');let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value,phone:pp.value,id:Date.now()});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();}
+async function openCam(){let b=document.getElementById('camBtn');b.innerHTML='⏳ Ivula...';try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}});let v=document.getElementById('cam');v.srcObject=stream;await v.play();b.innerHTML='✅ Camera + Mic Vuliwe!';document.getElementById('ls').innerHTML='📷🎤 LIVE Ready!';}catch(e){b.innerHTML='📷🎤 VULA CAMERA + MIC';alert('Vumela Camera+Mic: ALLOW\n'+e.message);}}
+function toggleMic(){if(!stream)return alert('Vula Camera kuqala!');let a=stream.getAudioTracks()[0];if(!a)return; a.enabled=!a.enabled;let btn=document.getElementById('micBtn');btn.innerHTML=a.enabled?'🎤 Mic ON - Bayakuzwa':'🔇 Mic OFF - Thula';btn.style.background=a.enabled?'#0a0':'#a00';}
+function startLive(){if(!stream)return alert('Vula Camera kuqala!');let L=JSON.parse(localStorage.L||'[]');L.unshift({title:'Owner LIVE',time:new Date().toLocaleString()});localStorage.L=JSON.stringify(L);document.getElementById('ls').innerHTML='🔴 LIVE + 🎤 MIC - Bukhoma!';}
+function stopLive(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;document.getElementById('cam').srcObject=null;}document.getElementById('camBtn').innerHTML='📷🎤 VULA CAMERA + MIC';document.getElementById('ls').innerHTML='⏹️ Stopped';}
+function addP(){if(!pn.value.trim())return alert('Faka igama! - Thando');let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value.trim(),phone:pp.value.trim(),id:Date.now()});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();alert('✅ '+p[p.length-1].name+' Added! Manje uzomfaka video ku Videos tab');}
 function upV(inp){let f=inp.files[0];if(!f)return;if(!sel.value)return alert('Khetha Performer!');let url=URL.createObjectURL(f);let V=JSON.parse(localStorage.V||'[]');V.unshift({perf:sel.value,name:f.name,url:url,time:new Date().toLocaleString()});localStorage.V=JSON.stringify(V);render();alert('✅ Video ka '+sel.value+' ifakiwe!');}
 function genV(){let c=Math.floor(10000000+Math.random()*90000000).toString();let v=JSON.parse(localStorage.VC||'[]');v.push({code:c,used:false});localStorage.VC=JSON.stringify(v);render();}
-function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='<div class=box style=color:red>❌ PIN ayilungile!</div>';return;}f.used=true;localStorage.VC=JSON.stringify(v);localStorage.ACCESS='true';vmsg.innerHTML='<div class=box style=color:#0f0>✅ PIN Lungile! Buka Videos + Live + Zwa Mic!</div>';render();}
-function render(){let P=JSON.parse(localStorage.P||'[]');pl.innerHTML=P.map(x=>'<div class=box>🟢 <b>'+x.name+'</b> - '+x.phone+'</div>').join('')||'Akukho performer';sel.innerHTML=P.map(x=>'<option value="'+x.name+'">'+x.name+'</option>').join('')||'<option>Khetha performer</option>';let V=JSON.parse(localStorage.V||'[]');let has=localStorage.ACCESS=='true';vl.innerHTML=V.map(v=>'<div class=box><b>👑 '+v.perf+'</b> - 📹 '+v.name+'<br>'+(has?'<video src="'+v.url+'" controls></video>':'<div style=background:#000;padding:20px;text-align:center>🔒 Faka Voucher PIN ku Vouchers</div>')+'<br><small>'+v.time+'</small></div>').join('')||'Akukho video';let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 PIN: <b style=color:gold;font-size:18px>'+v.code+'</b> - '+(v.used?'Used ✅':'Active 🟢')+'</div>').join('')||'Akukho voucher';}
+function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='<div class=box style=color:red>❌ PIN ayilungile!</div>';return;}f.used=true;localStorage.VC=JSON.stringify(v);localStorage.ACCESS='true';vmsg.innerHTML='<div class=box style=color:#0f0>✅ PIN Lungile! Buka Videos!</div>';render();}
+function getIni(name){return name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase();}
+function render(){let P=JSON.parse(localStorage.P||'[]');document.getElementById('cnt').innerHTML=P.length+' Active';if(P.length==0){pl.innerHTML='<div class=box style=text-align:center;color:#888;padding:20px>Akukho performer - Faka Thando ngenhla<br>👆</div>';}else{pl.innerHTML=P.map(x=>'<div class=box style=display:flex;align-items:center;gap:10px"><div class=ini>'+getIni(x.name)+'</div><div style=flex:1><b>'+x.name+'</b><br><small style=color:#0f0>● Camera Ready</small> - <small style=color:#888>'+x.phone+'</small></div><div style=color:#555>›</div></div>').join('');}sel.innerHTML=P.map(x=>'<option value="'+x.name+'">'+x.name+'</option>').join('')||'<option>Qala faka performer</option>';let V=JSON.parse(localStorage.V||'[]');let has=localStorage.ACCESS=='true';vl.innerHTML=V.map(v=>'<div class=box><b>👑 '+v.perf+'</b> - 📹 '+v.name+'<br>'+(has?'<video src="'+v.url+'" controls style=width:100%;border-radius:8px;margin:6px 0></video>':'<div style=background:#000;padding:20px;text-align:center;border-radius:8px>🔒 Faka Voucher PIN</div>')+'<br><small>'+v.time+'</small></div>').join('')||'Akukho video';let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 PIN: <b style=color:gold;font-size:18px>'+v.code+'</b> - '+(v.used?'Used':'Active 🟢')+'</div>').join('')||'';}
 render();
 </script></body></html>
