@@ -1,48 +1,60 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT MANUAL TYMEBANK</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:12px}.logo{font-size:28px;font-weight:900;color:#d4af37}.tabs{display:flex;gap:5px;margin:10px 0;overflow:auto}.tab{padding:8px 14px;border-radius:20px;border:none;font-weight:700;font-size:11px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.tuck{background:linear-gradient(135deg,#d4af37,#a67c00);color:#000;padding:14px;border-radius:12px;margin:8px 0;font-weight:800;font-size:14px} input,select{width:100%;padding:14px;margin:7px 0;background:#111;color:#fff;border:2px solid #d4af37;border-radius:10px;font-size:15px} .b{width:100%;padding:14px;border:none;border-radius:10px;font-weight:900;margin:7px 0;font-size:13px}.y{background:#d4af37;color:#000}.g{background:#0a0;color:#fff}.box{background:#222;padding:10px;margin:6px 0;border-radius:9px;border:1px solid #333}</style></head><body>
-<div style="display:flex;justify-content:space-between"><span class=logo>VAULT</span><span style="background:#d4af37;color:#000;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800">MANUAL ADD</span></div>
-<div class=tabs><button class="tab a" id=t0 onclick="show('ov',0)">📊 Overview</button><button class="tab" id=t1 onclick="show('biz',1)">💰 Add Business</button><button class="tab" id=t2 onclick="show('cre',2)">🎬 Performers</button><button class="tab" id=t3 onclick="show('vouch',3)">🎫 Vouchers</button></div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VAULT PHELA FLOW</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial;padding:12px}.logo{font-size:28px;font-weight:900;color:#d4af37}.tabs{display:flex;gap:5px;margin:10px 0;overflow:auto}.tab{padding:9px 14px;border-radius:20px;border:none;font-weight:700;font-size:11px}.tab.a{background:#d4af37;color:#000}.tab:not(.a){background:#222;color:#888}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin:10px 0}.tuck{background:linear-gradient(135deg,#d4af37,#a67c00);color:#000;padding:14px;border-radius:12px;margin:8px 0;font-weight:800} input,select{width:100%;padding:14px;margin:7px 0;background:#111;color:#fff;border:2px solid #d4af37;border-radius:10px;font-size:15px}.b{width:100%;padding:14px;border:none;border-radius:10px;font-weight:900;margin:7px 0}.y{background:#d4af37;color:#000}.g{background:#0a0;color:#fff}.r{background:red;color:#fff}.box{background:#222;padding:10px;margin:6px 0;border-radius:9px;border:1px solid #333}.age{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px}.ageBox{background:#151515;border:2px solid #d4af37;border-radius:16px;padding:20px;max-width:360px;text-align:center}.pinBig{width:100%;padding:16px;background:#000;color:#0f0;border:3px solid #0f0;border-radius:12px;font-size:24px;letter-spacing:5px;text-align:center;font-weight:900;margin:8px 0}</style></head><body>
+
+<div id=ageGate class=age><div class=ageBox><h2 style="color:red">🔞 18+ ONLY</h2><br><b style="color:#d4af37">OLIVE PERFORMERS ONLY</b><br><p style="color:#ccc;font-size:13px">Olive only - 18+ kuphela</p><br><button class="b r" onclick="enterVault()">✅ YEBO - NGI 18+ - NGENA</button><button class="b" style="background:#222;color:#888" onclick="location.href='https://google.com'">❌ PHUMA</button></div></div>
+
+<div style="display:flex;justify-content:space-between"><span class=logo>VAULT</span><span style="background:#0a0;color:#fff;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:800">PHELA FLOW</span></div>
+<div class=tabs><button class="tab a" id=t0 onclick="show('ov',0)">📊 Overview</button><button class="tab" id=t1 onclick="show('biz',1)">💰 Business</button><button class="tab" id=t2 onclick="show('cre',2)">🎬 Olive</button><button class="tab" id=t3 onclick="show('vid',3)">📹 Videos</button><button class="tab" id=t4 onclick="show('vouch',4)">🎫 Vouchers</button></div>
 
 <div id=ov class=card>
-<h3>🏦 MY BUSINESS - Overview</h3>
-<div id=showBiz class=tuck>Akukho Business Account - Hamba ku Add Business → Faka TymeBank Yakho Manually!</div>
+<h3>🔞 VAULT - Phela Flow - Olive + Flash</h3>
+<div id=showBiz class=tuck>Akukho Business - Add Business → Faka TymeBank!</div>
+<div style="border:2px solid red;border-radius:12px;padding:10px;margin:10px 0;background:#1a0a0a"><b style="color:red">🔴 LIVE OLIVE</b><br><video id=cam autoplay muted playsinline style="width:100%;border-radius:10px;background:#000;max-height:220px"></video><br><button class="b" style="background:#333;color:#fff" id=camBtn onclick="openCam()">📷🎤 VULA CAMERA + MIC</button><button class="b r" onclick="startLive()">🔴 START OLIVE LIVE</button><button class="b" style="background:#222;color:#888" onclick="stopLive()">⏹️ Stop</button><div id=ls style="color:#0f0;font-weight:800"></div></div>
 </div>
 
-<div id=biz class=card style=display:none>
-<h2 style="color:#d4af37">💰 FAKA BUSINESS ACCOUNT YAKHO MANUALLY</h2>
-<p style="color:#888;font-size:12px">Faka wena - Manual - TymeBank Yakho - Izogcina efonini yakho kuphela!</p>
+<div id=biz class=card style=display:none><h2 style="color:#d4af37">💰 FAKA TYMEBANK MANUALLY</h2><div style="background:#000;border:2px solid #d4af37;border-radius:14px;padding:14px"><input id=bname placeholder="Business - Yakho Trading" value="Yakho Trading"><select id=bbank><option>TymeBank</option><option>FNB</option><option>Capitec</option></select><input id=bacc placeholder="Account Number - Faka manually" style="font-size:20px;font-weight:900;text-align:center;border:2px solid #0f0"><input id=bbranch placeholder="Branch - 678910" value="678910"><input id=bphone placeholder="Phone 071..."><button class="b y" onclick="saveBiz()">💾 SAVE TYMEBANK</button><div id=msg style="text-align:center;font-weight:800"></div></div><div id=bizList></div></div>
 
-<div style="background:#000;border:2px solid #d4af37;border-radius:14px;padding:14px;margin:12px 0">
-<label style="color:#d4af37;font-size:13px;font-weight:800">1. Business Name:</label>
-<input id=bname placeholder="Example: Yakho Trading - Faka igama le business yakho">
+<div id=cre class=card style=display:none><h2>🎬 Olive Performers</h2><div style="background:#111;border-radius:12px;padding:10px"><input id=pn placeholder="Igama le Olive"><input id=pp placeholder="Phone"><button class="b g" onclick="addP()">+ Add Olive</button></div><div id=pl></div></div>
 
-<label style="color:#d4af37;font-size:13px;font-weight:800">2. Khetha Bank:</label>
-<select id=bbank><option>TymeBank</option><option>Capitec</option><option>FNB</option><option>ABSA</option><option>Standard Bank</option></select>
+<div id=vid class=card style=display:none>
+<h2>📹 OLIVE VIDEOS - Phela Flow</h2>
 
-<label style="color:#d4af37;font-size:13px;font-weight:800">3. Account Number Yakho - Faka Manually Lapha:</label>
-<input id=bacc placeholder="Faka account number yakho lapha - 5100..." style="font-size:20px;font-weight:900;letter-spacing:2px;text-align:center;border:2px solid #0f0">
-
-<label style="color:#d4af37;font-size:13px;font-weight:800">4. Branch Code:</label>
-<input id=bbranch placeholder="TymeBank: 678910 - Faka lapha" value="678910">
-
-<label style="color:#d4af37;font-size:13px;font-weight:800">5. Phone:</label>
-<input id=bphone placeholder="071... - Faka phone yakho">
-
-<button class="b y" onclick="saveBiz()" style="font-size:16px;margin-top:14px">💾 SAVE - GCINA BUSINESS ACCOUNT YAMI MANJE</button>
-<div id=msg style="text-align:center;margin-top:10px;font-weight:800"></div>
+<!-- PHELA FLOW - PIN LAPHA - BUKA AMAVIDEOS AWATHANDAYO -->
+<div style="background:#000;border:3px solid #d4af37;border-radius:14px;padding:14px;margin:10px 0">
+<b style="color:#d4af37;font-size:16px">🔓 PHELA FLOW - 3 STEPS:</b><br>
+<div style="background:#111;border-radius:10px;padding:10px;margin:8px 0;font-size:13px">
+<b>1. Thenga Voucher:</b> Hamba esitolo bakwethu → Flash → VAULT R50 → Thola PIN 8 digits<br>
+<b>2. Insert PIN App:</b> Faka PIN ngezansi → Verify<br>
+<b>3. PIN Valid → Buka Videos Awathandayo! 🔥</b>
+</div>
+<input id=pin class=pinBig placeholder="00000000" maxlength="8">
+<button class="b r" onclick="usePin()" style="font-size:17px">🔓 VERIFY PIN - PIN VALID → BUKA VIDEOS</button>
+<div id=vmsg></div>
+<div id=accessStatus style="margin-top:10px"></div>
 </div>
 
-<div id=bizList></div>
+<div style="background:#111;border-radius:10px;padding:8px"><select id=sel></select><input type=file accept="video/*" onchange="upV(this)"><small style="color:#888">Faka video ye Olive</small></div>
+<div id=vl></div>
 </div>
 
-<div id=cre class=card style=display:none><h2>🎬 Performers</h2><input id=pn placeholder="Igama"><input id=pp placeholder="Phone 071..."><button class="b g" onclick="addP()">+ Add Performer</button><div id=pl></div></div>
-<div id=vouch class=card style=display:none><h2>🎫 Vouchers</h2><button class="b y" onclick="genV()">Generate PIN R50</button><div id=vlist></div><input id=pin placeholder="Faka PIN"><button class="b g" onclick="usePin()">Verify PIN</button><div id=vmsg></div></div>
+<div id=vouch class=card style=display:none>
+<h2>🎫 FLASH VOUCHERS - Ezitolo Bakwethu</h2>
+<div class=tuck>🛒 PHELA:<br>Viewer Thenga Voucher R50 esitolo bakwethu via Flash → Thola 8 digit PIN → Hamba ku 📹 Videos Tab → Faka PIN → Verify Valid → Buka Ama Videos Awathandayo!<br><br>💰 Flash Merchant: Rejista - Imali ingena ku TymeBank yakho!</div>
+<button class="b y" onclick="genV()">🎫 Generate Test PIN (Test Only)</button>
+<div id=vlist></div>
+</div>
 
 <script>
-function show(id,i){['ov','biz','cre','vouch'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));document.getElementById('t'+i).classList.add('a');render();}
-function saveBiz(){if(!bacc.value.trim())return alert('Faka Account Number!');let biz={name:bname.value||'My Business',bank:bbank.value,acc:bacc.value.trim(),branch:bbranch.value,phone:bphone.value};localStorage.BIZ=JSON.stringify(biz);document.getElementById('msg').innerHTML='✅ SAVED! '+biz.bank+' - '+biz.acc+' - Ivela ku Overview!';render();setTimeout(()=>show('ov',0),1200);}
-function addP(){if(!pn.value)return alert('Faka igama');let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value,phone:pp.value});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();}
+function enterVault(){localStorage.AGE='18';document.getElementById('ageGate').style.display='none';}
+function checkAge(){if(localStorage.AGE!='18'){document.getElementById('ageGate').style.display='flex';}else{document.getElementById('ageGate').style.display='none';}}
+function show(id,i){['ov','biz','cre','vid','vouch'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));document.getElementById('t'+i).classList.add('a');render();}
+let stream=null;async function openCam(){let b=document.getElementById('camBtn');b.innerHTML='⏳...';try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:true});let v=document.getElementById('cam');v.srcObject=stream;await v.play();b.innerHTML='✅ Vuliwe!';}catch(e){b.innerHTML='📷🎤 VULA';alert('ALLOW\n'+e.message);}}
+function startLive(){if(!stream)return alert('Vula Camera!');document.getElementById('ls').innerHTML='🔴 OLIVE LIVE!';}
+function stopLive(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;document.getElementById('cam').srcObject=null;}document.getElementById('ls').innerHTML='⏹️ Stopped';}
+function saveBiz(){if(!bacc.value.trim())return alert('Faka Account Number!');let biz={name:bname.value||'My Business',bank:bbank.value,acc:bacc.value.trim(),branch:bbranch.value,phone:bphone.value};localStorage.BIZ=JSON.stringify(biz);document.getElementById('msg').innerHTML='✅ SAVED! '+biz.bank+' - '+biz.acc;render();setTimeout(()=>show('ov',0),800);}
+function addP(){if(!pn.value)return alert('Faka igama');let p=JSON.parse(localStorage.P||'[]');p.push({name:pn.value,phone:pp.value,olive:true});localStorage.P=JSON.stringify(p);pn.value='';pp.value='';render();}
+function upV(inp){let f=inp.files[0];if(!f)return;if(!sel.value)return alert('Khetha Olive!');let url=URL.createObjectURL(f);let V=JSON.parse(localStorage.V||'[]');V.unshift({perf:sel.value,name:f.name,url:url,time:new Date().toLocaleString()});localStorage.V=JSON.stringify(V);render();}
 function genV(){let c=Math.floor(10000000+Math.random()*90000000).toString();let v=JSON.parse(localStorage.VC||'[]');v.push({code:c,used:false});localStorage.VC=JSON.stringify(v);render();}
-function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);if(!f){vmsg.innerHTML='❌ PIN ayilungile';return;}f.used=true;localStorage.VC=JSON.stringify(v);vmsg.innerHTML='✅ Verified!';render();}
-function render(){let biz=JSON.parse(localStorage.BIZ||'null');if(!biz){document.getElementById('showBiz').innerHTML='❌ Akukho Business Account - Chofoza 💰 Add Business → Faka TymeBank Yakho Manually!';document.getElementById('bizList').innerHTML='';}else{document.getElementById('showBiz').innerHTML='💼 '+biz.name+'<br>🏦 Bank: '+biz.bank+'<br>💳 Account: <b style="font-size:20px">'+biz.acc+'</b><br>Branch: '+biz.branch+'<br>📱 '+biz.phone+'<br>✅ Saved Manually - Yeyakho!';document.getElementById('bizList').innerHTML='<div class=tuck>✅ SAVED MANUALLY:<br>🏦 '+biz.name+'<br>💳 '+biz.acc+'<br>🏦 '+biz.bank+' - '+biz.branch+'</div>';bname.value=biz.name;bbank.value=biz.bank;bacc.value=biz.acc;bbranch.value=biz.branch;bphone.value=biz.phone;}let P=JSON.parse(localStorage.P||'[]');pl.innerHTML=P.map(x=>'<div class=box>👑 '+x.name+' - '+x.phone+'</div>').join('')||'Akukho';let VC=JSON.parse(localStorage.VC||'[]');vlist.innerHTML=VC.map(v=>'<div class=box>🎫 PIN: <b style=color:gold>'+v.code+'</b></div>').join('')||'';}
-render();
+function usePin(){let c=pin.value.trim();let v=JSON.parse(localStorage.VC||'[]');let f=v.find(x=>x.code==c);let msg=document.getElementById('vmsg');if(!f){msg.innerHTML='<div class=box style="background:#300;border:2px solid red;color:red;text-align:center;padding:15px;font-size:16px">❌ PIN INVALID! Hlola Flash receipt - 8 digits - Example: 45891234<br><small>Thenga voucher esitolo bakwethu via Flash</small></div>';return;}if(f.used){msg.innerHTML='<div class=box style="background:#330;border:2px solid orange;color:orange;text-align:center;padding:15px">⚠️ PIN Used - Seyisetshenzisiwe - Thenga entsha!</div>';return;}f.used=true;localStorage.VC=JSON.stringify(v);localStorage.ACCESS='true';msg.innerHTML='<div class=box style="background:#030;border:2px solid #0f0;color:#0f0;text-align:center;padding:15px;font-size:18px;font-weight:900">✅ PIN VALID! 🔓 PIN VALID! 🔓<br><small style="font-size:13px">Vuliwe! Scroll ngezansi - Buka ama videos awathandayo MANJE! 🔥</small></div>';render();}
+function render(){let biz=JSON.parse(localStorage.BIZ||'null');if(!biz){document.getElementById('showBiz').innerHTML='❌ Akukho Business - Add Business → Faka TymeBank!';document.getElementById('bizList').innerHTML='';}else{document.getElementById('showBiz').innerHTML='💼 '+biz.name+'<br>🏦 Bank: '+biz.bank+'<br>💳 Account: <b style="font-size:20px">'+biz.acc+'</b><br>Branch: '+biz.branch+'<br>✅ Flash izokhokhela lapha!';document.getElementById('bizList').innerHTML='<div class=tuck>✅ SAVED:<br>🏦 '+biz.name+'<br>💳 '+biz.acc+'</div>';bname.value=biz.name;bbank.value=biz.bank;bacc.value=biz.acc;bbranch.value=biz.branch;bphone.value=biz.phone;}let P=JSON.parse(localStorage.P||'[]');document.getElementById('pl').innerHTML=P.length==0?'<div class=box>Akukho Olive</div>':P.map(x=>'<div class=box>🔞 Olive: <b>'+x.name+'</b></div>').join('');sel.innerHTML=P.map(x=>'<option value="'+x.name+'">'+x.name+'</option>').join('')||'<option>Faka Olive</option>';let V=JSON.parse(localStorage.V||'[]');let has=localStorage.ACCESS=='true';let st=document.getElementById('accessStatus');if(has){st.innerHTML='<div style="background:#0a0;color:#fff;padding:12px;border-radius:10px;text-align:center;font-weight:900;font-size:15px">✅ PIN VALID - ACCESS VULIWE! Buka ama videos awathandayo ngezansi! 🔥👇</div>';}else{st.innerHTML='<div style="background:#a00;color:#fff;padding:12px;border-radius:10px;text-align:center;font-weight:800">🔒 PIN INVALID - Faka PIN Valid ngenhla ukubuka ama videos awathandayo<br><small>Thenga voucher esitolo bakwethu via Flash</small></div>';}vl.innerHTML=V.map(v=>'<div class=box><b>👑 Olive: '+v.perf+'</b> - '+v.name+'<br>'+(has?'<video src="'+v.url+'" controls style="width:100%;border-radius:10px;margin:6px 0;max-height:300px"></video><div style="text-align:center"><button class="b" style="background:#d4af37;color:#000;padding:8px">❤️ Thanda - Video Awuthandayo</button></div>':'<div style="background:#000;padding:30px;text-align:center;border-radius:10px;border:2px solid red"><b style="color:red;font-size:18px">🔒 PIN INVALID - Faka PIN Valid ngenhla</b><br><small>Thenga voucher esitolo bakwethu - Flash - R50</small></div>')+'<br><small>'+v.time+'</small></div>').join('')||'<div class=box style=text-align:center;color:#888>Akukho video - Faka Olive videos kuqala</div>';let VC=JSON.parse(localStorage.VC||'[]');document.getElementById('vlist').innerHTML=VC.map(v=>'<div class=box>🎫 FLASH PIN: <b style=color:gold;font-size:20px;letter-spacing:2px">'+v.code+'</b> - '+(v.used?'Used ✅':'Valid 🟢 - Active')+'<br><small>🛒 Ezitolo Bakwethu - Flash Merchant</small></div>').join('')||'';}
+checkAge();render();
 </script></body></html>
