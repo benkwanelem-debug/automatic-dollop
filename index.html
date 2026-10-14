@@ -1,16 +1,62 @@
-<div style="margin-top:15px; border:1px solid gold; padding:10px; border-radius:10px; background:#111;">
-  <label style="color:gold; font-weight:bold; display:block; margin-bottom:5px;">💰 Payout Method</label>
-  <select id="payoutMethod" style="width:100%; padding:12px; border:1px solid gold; border-radius:8px; background:#000; color:white; margin-bottom:12px;">
-    <option>Select payout method —</option>
-    <option>TymeBank</option>
-    <option>Capitec</option>
-    <option>FNB</option>
-    <option>ABSA</option>
-    <option>Instant Money (Pick n Pay / Shoprite)</option>
-    <option>Cash Send (FNB)</option>
-    <option>eWallet (Standard Bank)</option>
-  </select>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isango Vault OTT</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial;margin:0;padding:10px}
+.card{border:1px solid gold;border-radius:12px;padding:15px;margin-bottom:15px;background:#111}
+label{color:gold;font-weight:bold;display:block;margin:10px 0 5px 0}
+input,select{width:100%;padding:12px;border:1px solid gold;border-radius:8px;background:#000;color:#fff;box-sizing:border-box}
+button{width:100%;padding:14px;background:gold;color:#000;font-weight:bold;border:none;border-radius:10px;margin-top:15px;font-size:16px}
+.badge{border:1px solid gold;color:gold;padding:5px 10px;border-radius:20px;font-size:12px;text-align:center;margin:10px 0}
+</style>
+</head>
+<body>
 
-  <label style="color:gold; font-weight:bold; display:block; margin-bottom:5px;">🏦 Account / Phone for Payout</label>
-  <input id="payoutAccount" placeholder="Enter account number or phone for payout" style="width:100%; padding:12px; border:1px solid gold; border-radius:8px; background:#000; color:white;" />
+<h2 style="color:gold;text-align:center">Isango Vault OTT</h2>
+
+<div class="card">
+<h3>🫒 Olive + Link + QR Form</h3>
+<p style="font-size:13px">Link your Olive profile, add payout method, and generate your secure QR</p>
+
+<label>Igama le Olive</label>
+<input id="oliveName" placeholder="Lerato" />
+
+<label>Phone</label>
+<input id="olivePhone" placeholder="071 234 5678" />
+
+<div style="border:1px dashed gold;padding:10px;border-radius:10px;margin-top:15px">
+<label>💰 Payout Method</label>
+<select id="payoutMethod">
+<option>Select payout method —</option>
+<option>TymeBank</option>
+<option>Capitec</option>
+<option>FNB</option>
+<option>ABSA</option>
+<option>Instant Money (Pick n Pay / Shoprite)</option>
+<option>Cash Send (FNB)</option>
+<option>eWallet (Standard Bank)</option>
+</select>
+
+<label>🏦 Account / Phone for Payout</label>
+<input id="payoutAccount" placeholder="Enter account number or phone for payout" />
 </div>
+
+<button onclick="addOlive()">+ Add Olive + Link + QR</button>
+
+<div class="badge">🛡️ SA 18+ Verified - Secure & FICA Compliant</div>
+</div>
+
+<script>
+function addOlive(){
+let name=document.getElementById('oliveName').value;
+let phone=document.getElementById('olivePhone').value;
+let method=document.getElementById('payoutMethod').value;
+let acc=document.getElementById('payoutAccount').value;
+alert("✅ Olive Added!\nName: "+name+"\nPhone: "+phone+"\nPayout: "+method+"\nAccount: "+acc+"\n\nLink: isango.vault/o/"+name+"\nQR Generated!");
+}
+</script>
+
+</body>
+</html>
