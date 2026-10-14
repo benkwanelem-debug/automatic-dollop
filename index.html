@@ -6,18 +6,26 @@
 <style>
 *{box-sizing:border-box}
 body{background:#000;color:#fff;font-family:Arial;margin:0;padding:10px}
-h2{color:gold;text-align:center}
-.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
+h2{color:gold;text-align:center;margin:10px 0}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px}
 .tab{border:1px solid gold;padding:10px 14px;border-radius:20px;white-space:nowrap;background:#111;color:gold;cursor:pointer;font-size:13px}
 .tab.active{background:gold;color:#000;font-weight:bold}
 .card{border:1px solid gold;border-radius:14px;padding:16px;margin-bottom:16px;background:#111;display:none}
 .card.active{display:block}
-label{color:gold;font-weight:bold;display:block;margin:14px 0 6px 0}
+label{color:gold;font-weight:bold;display:block;margin:14px 0 6px 0;font-size:14px}
 input,select{width:100%;padding:14px;border:1px solid gold;border-radius:10px;background:#000;color:#fff;display:block;margin-bottom:4px}
-button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;border:none;border-radius:12px;margin-top:18px;font-size:16px}
+button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;border:none;border-radius:12px;margin-top:18px;font-size:16px;cursor:pointer}
 .header{display:flex;justify-content:space-between;align-items:center;border:1px solid gold;border-radius:10px;padding:8px 12px;margin-bottom:12px}
 .stat{display:flex;justify-content:space-between;border-bottom:1px dashed #333;padding:10px 0;font-size:14px}
 .bankbox{border:1px dashed gold;padding:12px;border-radius:12px;margin-top:12px;background:#0a0a0a}
+.videoWrap{position:relative;background:#000;border:1px solid gold;border-radius:12px;overflow:hidden;margin-top:12px}
+.watermark{position:absolute;top:10px;left:10px;color:rgba(255,215,0,0.35);font-size:11px;pointer-events:none;user-select:none;z-index:2;font-weight:bold}
+.blackScreen{position:absolute;top:0;left:0;width:100%;height:100%;background:#000;display:none;justify-content:center;align-items:center;z-index:10;text-align:center}
+.toggleBox{border:1px solid gold;border-radius:10px;padding:12px;margin:12px 0;background:#000;display:flex;justify-content:space-between;align-items:center}
+.switch{position:relative;display:inline-block;width:50px;height:28px;margin:0}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#333;border:1px solid gold;border-radius:20px;transition:.3s}
+.dot{position:absolute;height:20px;width:20px;left:4px;bottom:3px;background:#888;border-radius:50%;transition:.3s;z-index:3}
 </style>
 </head>
 <body>
@@ -32,24 +40,22 @@ button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;borde
 </div>
 
 <div id="overview" class="card active">
-<div class="header"><b>Overview</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Live v2.1</span></div>
+<div class="header"><b>📊 Overview</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Live v2.1</span></div>
 <div class="stat"><span>Total Olives</span><span>12</span></div>
 <div class="stat"><span>Total Earnings</span><span>R 4,250</span></div>
 <div class="stat"><span>Pending Payouts</span><span>R 890</span></div>
+<div class="stat"><span>Today Views</span><span>1,432</span></div>
+<div class="stat"><span>🛡️ SA 18+ Verified</span><span>Secure & FICA</span></div>
 </div>
 
 <div id="business" class="card">
-<div class="header"><b>Business / Withdraw</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Secure</span></div>
-
+<div class="header"><b>💼 Business / Withdraw</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Secure</span></div>
 <label>🏢 Igama le App / Business Name</label>
 <input id="appName" placeholder="Isango Vault - Lerato">
-
 <label>Balance Yakho</label>
 <input value="R 4,250 - Available" disabled>
-
 <div class="bankbox">
 <b style="color:gold">🏦 Bank Details - For Payout</b>
-
 <label>Bank Name</label>
 <select id="bankName">
 <option>Select bank —</option>
@@ -60,38 +66,28 @@ button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;borde
 <option>Standard Bank</option>
 <option>Nedbank</option>
 </select>
-
 <label>Account Holder Name</label>
 <input id="accHolder" placeholder="Lerato Dlamini">
-
 <label>Account Number</label>
 <input id="accNumber" placeholder="1234567890">
-
 <label>Branch Code (Optional)</label>
 <input id="branchCode" placeholder="250655">
-
 <label>Phone Linked to Bank / eWallet</label>
-<input id="bankPhone" placeholder="071 234 5678 - For Instant Money">
+<input id="bankPhone" placeholder="071 234 5678 - For Instant Money / CashSend">
 </div>
-
 <label>Amount to Withdraw</label>
 <input id="withdrawAmount" placeholder="R 500">
-
-<button onclick="alert('✅ Business Saved! App: '+document.getElementById('appName').value+' | Bank: '+document.getElementById('bankName').value)">💾 Save Business + Request Withdraw</button>
-
+<button onclick="saveBusiness()">💾 Save Business + Request Withdraw</button>
 <div class="stat" style="margin-top:15px"><span>Last Payout</span><span>R 1,200 - Capitec - Success</span></div>
 <div class="stat"><span>Payout History</span><span>View All</span></div>
 </div>
 
 <div id="creator" class="card">
 <div class="header"><b>🫒 Olive + Link + QR Form</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Improved v2.1</span></div>
-
 <label>Igama le Olive</label>
 <input id="oliveName" placeholder="Lerato">
-
 <label>Phone</label>
 <input id="olivePhone" placeholder="071 234 5678">
-
 <div class="bankbox">
 <label>💰 Payout Method</label>
 <select id="payoutMethod">
@@ -104,20 +100,54 @@ button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;borde
 <option>Cash Send (FNB)</option>
 <option>eWallet (Standard Bank)</option>
 </select>
-
 <label>🏦 Account / Phone for Payout</label>
-<input id="payoutAccount" placeholder="Enter account number or phone">
+<input id="payoutAccount" placeholder="Enter account number or phone for payout">
 </div>
-
-<button onclick="alert('✅ Olive Added!')">+ Add Olive + Link + QR</button>
+<button onclick="addOlive()">+ Add Olive + Link + QR</button>
 </div>
 
 <div id="video" class="card">
-<div class="header"><b>🎥 Video + Live</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">OTT Ready</span></div>
+<div class="header"><b>🎥 Video + Live</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">DRM Protected</span></div>
+
 <label>Upload Video (OTT)</label>
-<input type="file">
-<button>⬆️ Upload Video</button>
-<button style="background:red;color:white;margin-top:20px">🔴 Start Live Stream</button>
+<input type="file" id="videoUpload">
+
+<div class="videoWrap">
+<video id="protectedVideo" controls controlsList="nodownload noremoteplayback" disablePictureInPicture style="width:100%;background:#000">
+<source src="" type="video/mp4">
+Your browser does not support video.
+</video>
+<div class="watermark" id="videoWatermark">Isango Vault - Lerato - 071****678 - ID: #8842</div>
+<div class="blackScreen" id="blackScreen"><div><p style="color:gold;font-weight:bold;margin:0">🔒 Screen Recording Blocked</p><p style="font-size:11px;color:#888;margin:5px 0 0 0">Protected by Isango Vault DRM</p></div></div>
+</div>
+<p style="font-size:11px;color:#888;margin:6px 0">🛡️ Protected: No Download • No Screen Record • Watermarked</p>
+
+<div class="toggleBox">
+<div>
+<b style="color:gold;font-size:14px">⬇️ Download Permission</b>
+<p id="downloadStatus" style="font-size:12px;color:#888;margin:4px 0 0 0">OFF - Viewers must request permission</p>
+</div>
+<label class="switch">
+<input type="checkbox" id="downloadToggle" onchange="toggleDownload()">
+<span class="slider"></span>
+<span class="dot" id="toggleDot"></span>
+</label>
+</div>
+
+<div id="permissionRequests" style="border:1px dashed gold;padding:10px;border-radius:10px;display:block;background:#0a0a0a">
+<b style="color:gold;font-size:13px">📩 Download Requests (Uma i-OFF)</b>
+<div style="font-size:13px;margin:8px 0;display:flex;justify-content:space-between;align-items:center"><span>Sipho - wants to download</span><button style="width:auto;padding:6px 12px;margin:0;font-size:12px" onclick="alert('✅ Approved!')">Approve</button></div>
+<div style="font-size:13px;margin:8px 0;display:flex;justify-content:space-between;align-items:center"><span>Thandi - wants to download</span><button style="width:auto;padding:6px 12px;margin:0;font-size:12px;background:#333;color:gold;border:1px solid gold" onclick="alert('❌ Declined')">Decline</button></div>
+</div>
+
+<button onclick="uploadVideo()">⬆️ Upload Video</button>
+
+<div style="margin-top:15px;border:1px solid #333;border-radius:10px;padding:10px">
+<b style="font-size:13px">👀 Viewer View:</b><br>
+<button style="width:auto;padding:8px 15px;font-size:13px;background:#111;color:gold;border:1px solid gold;margin-top:8px" onclick="requestDownload()">🔒 Request to Download</button>
+</div>
+
+<button style="background:red;color:white;margin-top:20px" onclick="alert('🔴 Live Started! Link: isango.vault/live/Lerato')">🔴 Start Live Stream</button>
 </div>
 
 <script>
@@ -127,6 +157,62 @@ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 el.classList.add('active');
 }
+function saveBusiness(){
+let app=document.getElementById('appName').value;
+let bank=document.getElementById('bankName').value;
+if(!app || bank.includes('Select')){alert('⚠️ Faka Igama le App ne Bank!');return;}
+alert("✅ Business Saved!\nApp: "+app+"\nBank: "+bank+"\n💸 Payout izongena ku "+bank+"!");
+}
+function addOlive(){
+let name=document.getElementById('oliveName').value || 'Lerato';
+let method=document.getElementById('payoutMethod').value;
+if(method.includes('Select')){alert('⚠️ Khetha i-Payout Method!');return;}
+alert("✅ Olive Added!\nIgama: "+name+"\nPayout: "+method+"\n🔗 isango.vault/o/"+name);
+}
+function toggleDownload(){
+let toggle=document.getElementById('downloadToggle');
+let status=document.getElementById('downloadStatus');
+let dot=document.getElementById('toggleDot');
+let req=document.getElementById('permissionRequests');
+let slider=document.querySelector('.slider');
+if(toggle.checked){
+status.innerHTML="ON - Anyone can download";
+status.style.color="gold";
+dot.style.transform="translateX(22px)";
+dot.style.background="gold";
+slider.style.background="#111";
+req.style.display="none";
+}else{
+status.innerHTML="OFF - Viewers must request permission";
+status.style.color="#888";
+dot.style.transform="translateX(0)";
+dot.style.background="#888";
+req.style.display="block";
+}
+}
+function uploadVideo(){
+let on=document.getElementById('downloadToggle').checked;
+alert('✅ Video Uploaded!\nDownload: '+(on?'ON - Anyone can download':'OFF - Request needed')+'\n🛡️ DRM + Watermark Active - Screen Record = Black');
+}
+function requestDownload(){
+let on=document.getElementById('downloadToggle').checked;
+if(on){alert('⬇️ Downloading...');}
+else{alert('📩 Request Sent to Owner! Linga imvume yokudownload-a ivideo');}
+}
+// Anti Screen Record
+document.getElementById('protectedVideo').addEventListener('contextmenu', e=>{e.preventDefault();return false;});
+document.addEventListener('keydown', (e)=>{
+if(e.key==='PrintScreen' || (e.ctrlKey && e.shiftKey && e.key==='S')){
+e.preventDefault();
+document.getElementById('blackScreen').style.display='flex';
+alert('🔒 Screenshot / Screen Record Blocked by Isango Vault DRM');
+setTimeout(()=>{document.getElementById('blackScreen').style.display='none'},2000);
+}
+});
+setInterval(()=>{
+let w=document.getElementById('videoWatermark');
+if(w){w.style.left=Math.random()*60+'%'; w.style.top=Math.random()*70+'%';}
+},3000);
 </script>
 
 </body>
