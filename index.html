@@ -1,126 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isango Vault OTT</title>
-<style>
-body{background:#000;color:#fff;font-family:Arial;margin:0;padding:10px}
-h2{color:gold;text-align:center;margin:10px 0}
-.tabs{display:flex;gap:5px;overflow-x:auto;margin:15px 0}
-.tab{border:1px solid gold;padding:8px 12px;border-radius:20px;white-space:nowrap;cursor:pointer;background:#111;color:gold;font-size:13px}
-.tab.active{background:gold;color:#000;font-weight:bold}
-.card{border:1px solid gold;border-radius:12px;padding:15px;margin-bottom:15px;background:#111;display:none}
-.card.active{display:block}
-label{color:gold;font-weight:bold;display:block;margin:10px 0 5px 0;font-size:14px}
-input,select{width:100%;padding:12px;border:1px solid gold;border-radius:8px;background:#000;color:#fff;box-sizing:border-box}
-button{width:100%;padding:14px;background:gold;color:#000;font-weight:bold;border:none;border-radius:10px;margin-top:15px;font-size:16px;cursor:pointer}
-.stat{display:flex;justify-content:space-between;border-bottom:1px dashed #333;padding:8px 0}
-.badge{border:1px solid gold;color:gold;padding:5px 10px;border-radius:20px;font-size:12px;text-align:center;margin:10px 0}
-.header-badge{border:1px solid gold;border-radius:12px;padding:3px 10px;display:flex;justify-content:space-between;align-items:center;background:#111;margin-bottom:10px}
-.header-badge span{border:1px solid gold;color:gold;border-radius:12px;padding:2px 8px;font-size:11px}
-</style>
-</head>
-<body>
-
-<h2>Isango Vault OTT</h2>
-
-<div class="tabs">
-<div class="tab active" onclick="openTab('overview')">📊 Overview</div>
-<div class="tab" onclick="openTab('business')">💼 Business</div>
-<div class="tab" onclick="openTab('creator')">🫒 Olive + Link + QR</div>
-<div class="tab" onclick="openTab('video')">🎥 Video+Live</div>
-</div>
-
-<!-- OVERVIEW - IBUYILE -->
-<div id="overview" class="card active">
-<div class="header-badge"><h3 style="margin:5px">Overview</h3><span>Live v2.1</span></div>
-<div class="stat"><span>Total Olives</span><span>12</span></div>
-<div class="stat"><span>Total Earnings</span><span>R 4,250</span></div>
-<div class="stat"><span>Pending Payouts</span><span>R 890</span></div>
-<div class="stat"><span>Today Views</span><span>1,432</span></div>
-<div class="badge">🛡️ SA 18+ Verified - Secure & FICA Compliant</div>
-</div>
-
-<!-- BUSINESS - IBUYILE -->
 <div id="business" class="card">
 <div class="header-badge"><h3 style="margin:5px">Business / Withdraw</h3><span>Secure</span></div>
+
+<label>🏢 Igama le App / Business Name</label>
+<input id="appName" placeholder="Isango Vault - Lerato" />
+
 <label>Balance Yakho</label>
 <input value="R 4,250 - Available" disabled />
-<label>Withdraw Method</label>
-<select id="bizPayout">
-<option>TymeBank</option>
-<option>Capitec</option>
-<option>FNB</option>
-<option>Instant Money (Shoprite)</option>
-<option>Cash Send</option>
-<option>eWallet</option>
-</select>
-<label>Amount</label>
-<input placeholder="R 500" />
-<button onclick="alert('✅ Withdraw Request Sent!')">💸 Request Withdraw</button>
-<div class="stat" style="margin-top:15px"><span>Last Payout</span><span>R 1,200 - Capitec - Success</span></div>
-<div class="stat"><span>Payout History</span><span>View All</span></div>
-</div>
-
-<!-- CREATOR + PAYOUT - ENTsha ESILUNGISILE -->
-<div id="creator" class="card">
-<div class="header-badge"><h3 style="margin:5px">🫒 Olive + Link + QR Form</h3><span>Improved v2.1</span></div>
-<p style="font-size:13px">Link your Olive profile, add payout method, and generate your secure QR</p>
-
-<label>Igama le Olive</label>
-<input id="oliveName" placeholder="Lerato" />
-
-<label>Phone</label>
-<input id="olivePhone" placeholder="071 234 5678" />
 
 <div style="border:1px dashed gold;padding:10px;border-radius:10px;margin-top:15px">
-<label>💰 Payout Method</label>
-<select id="payoutMethod">
-<option>Select payout method —</option>
+<h4 style="color:gold;margin:5px 0">🏦 Bank Details - For Payout</h4>
+
+<label>Bank Name</label>
+<select id="bankName">
+<option>Select bank —</option>
 <option>TymeBank</option>
 <option>Capitec</option>
 <option>FNB</option>
 <option>ABSA</option>
-<option>Instant Money (Pick n Pay / Shoprite)</option>
-<option>Cash Send (FNB)</option>
-<option>eWallet (Standard Bank)</option>
+<option>Standard Bank</option>
+<option>Nedbank</option>
 </select>
 
-<label>🏦 Account / Phone for Payout</label>
-<input id="payoutAccount" placeholder="Enter account number or phone for payout" />
+<label>Account Holder Name</label>
+<input id="accHolder" placeholder="Lerato Dlamini" />
+
+<label>Account Number</label>
+<input id="accNumber" placeholder="1234567890" />
+
+<label>Branch Code (Optional)</label>
+<input id="branchCode" placeholder="250655" />
+
+<label>Phone Linked to Bank / eWallet</label>
+<input id="bankPhone" placeholder="071 234 5678 - For Instant Money / CashSend" />
 </div>
 
-<button onclick="addOlive()">+ Add Olive + Link + QR</button>
-<div class="badge">🛡️ SA 18+ Verified - Secure & FICA Compliant</div>
-<p style="font-size:11px;text-align:center;color:#888;margin-top:8px">Secure payouts • Encrypted • Powered by Isango Vault</p>
-</div>
+<label style="margin-top:15px">Amount to Withdraw</label>
+<input id="withdrawAmount" placeholder="R 500" />
 
-<!-- VIDEO+LIVE - IBUYILE -->
-<div id="video" class="card">
-<div class="header-badge"><h3 style="margin:5px">🎥 Video + Live</h3><span>OTT Ready</span></div>
-<label>Upload Video (OTT)</label>
-<input type="file" />
-<button onclick="alert('✅ Video Uploaded to Vault!')">⬆️ Upload Video</button>
-<label style="margin-top:20px">Go Live</label>
-<button style="background:red;color:white" onclick="alert('🔴 Live Started! Link: isango.vault/live/Lerato')">🔴 Start Live Stream</button>
-<div class="stat" style="margin-top:15px"><span>Live Viewers Now</span><span>87</span></div>
-<div class="stat"><span>Total Videos</span><span>24 Videos</span></div>
+<button onclick="saveBusiness()">💾 Save Business + Request Withdraw</button>
+
+<div style="margin-top:15px">
+<div class="stat"><span>Last Payout</span><span>R 1,200 - Capitec - Success</span></div>
+<div class="stat"><span>Payout History</span><span>View All</span></div>
+</div>
 </div>
 
 <script>
-function openTab(id){
-document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-event.target.classList.add('active');
-}
-function addOlive(){
-let name=document.getElementById('oliveName').value || 'Lerato';
-let phone=document.getElementById('olivePhone').value || '071...';
-let method=document.getElementById('payoutMethod').value;
-let acc=document.getElementById('payoutAccount').value;
-if(method.includes('Select')){alert('⚠️ Khetha i-Payout Method!');return;}
-alert("✅ Olive Added!\n\nIgama: "+name+"\nPhone: "+phone+"\nPayout: "+method+"\nAccount/Phone: "+acc+"\n\n🔗 Link: isango.vault/o/"+name+"\n📱 QR Generated!\n\nSAVED - Ku Overview & Business!");
+function saveBusiness(){
+let app=document.getElementById('appName').value;
+let bank=document.getElementById('bankName').value;
+let holder=document.getElementById('accHolder').value;
+let acc=document.getElementById('accNumber').value;
+let amount=document.getElementById('withdrawAmount').value;
+if(!app || bank.includes('Select')){alert('⚠️ Faka Igama le App ne Bank!');return;}
+alert("✅ Business Saved!\n\nApp: "+app+"\nBank: "+bank+"\nHolder: "+holder+"\nAcc: "+acc+"\nWithdraw: "+amount+"\n\n💸 Payout izongena ku "+bank+"!");
 }
 </script>
-</body>
