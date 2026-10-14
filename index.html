@@ -1,14 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isango Vault OTT</title>
+<style>
+*{box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial;margin:0;padding:10px}
+h2{color:gold;text-align:center}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
+.tab{border:1px solid gold;padding:10px 14px;border-radius:20px;white-space:nowrap;background:#111;color:gold;cursor:pointer;font-size:13px}
+.tab.active{background:gold;color:#000;font-weight:bold}
+.card{border:1px solid gold;border-radius:14px;padding:16px;margin-bottom:16px;background:#111;display:none}
+.card.active{display:block}
+label{color:gold;font-weight:bold;display:block;margin:14px 0 6px 0}
+input,select{width:100%;padding:14px;border:1px solid gold;border-radius:10px;background:#000;color:#fff;display:block;margin-bottom:4px}
+button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;border:none;border-radius:12px;margin-top:18px;font-size:16px}
+.header{display:flex;justify-content:space-between;align-items:center;border:1px solid gold;border-radius:10px;padding:8px 12px;margin-bottom:12px}
+.stat{display:flex;justify-content:space-between;border-bottom:1px dashed #333;padding:10px 0;font-size:14px}
+.bankbox{border:1px dashed gold;padding:12px;border-radius:12px;margin-top:12px;background:#0a0a0a}
+</style>
+</head>
+<body>
+
+<h2>Isango Vault OTT</h2>
+
+<div class="tabs">
+<div class="tab active" onclick="openTab('overview',this)">📊 Overview</div>
+<div class="tab" onclick="openTab('business',this)">💼 Business</div>
+<div class="tab" onclick="openTab('creator',this)">🫒 Olive + Link + QR</div>
+<div class="tab" onclick="openTab('video',this)">🎥 Video+Live</div>
+</div>
+
+<div id="overview" class="card active">
+<div class="header"><b>Overview</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Live v2.1</span></div>
+<div class="stat"><span>Total Olives</span><span>12</span></div>
+<div class="stat"><span>Total Earnings</span><span>R 4,250</span></div>
+<div class="stat"><span>Pending Payouts</span><span>R 890</span></div>
+</div>
+
 <div id="business" class="card">
-<div class="header-badge"><h3 style="margin:5px">Business / Withdraw</h3><span>Secure</span></div>
+<div class="header"><b>Business / Withdraw</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Secure</span></div>
 
 <label>🏢 Igama le App / Business Name</label>
-<input id="appName" placeholder="Isango Vault - Lerato" />
+<input id="appName" placeholder="Isango Vault - Lerato">
 
 <label>Balance Yakho</label>
-<input value="R 4,250 - Available" disabled />
+<input value="R 4,250 - Available" disabled>
 
-<div style="border:1px dashed gold;padding:10px;border-radius:10px;margin-top:15px">
-<h4 style="color:gold;margin:5px 0">🏦 Bank Details - For Payout</h4>
+<div class="bankbox">
+<b style="color:gold">🏦 Bank Details - For Payout</b>
 
 <label>Bank Name</label>
 <select id="bankName">
@@ -22,37 +62,72 @@
 </select>
 
 <label>Account Holder Name</label>
-<input id="accHolder" placeholder="Lerato Dlamini" />
+<input id="accHolder" placeholder="Lerato Dlamini">
 
 <label>Account Number</label>
-<input id="accNumber" placeholder="1234567890" />
+<input id="accNumber" placeholder="1234567890">
 
 <label>Branch Code (Optional)</label>
-<input id="branchCode" placeholder="250655" />
+<input id="branchCode" placeholder="250655">
 
 <label>Phone Linked to Bank / eWallet</label>
-<input id="bankPhone" placeholder="071 234 5678 - For Instant Money / CashSend" />
+<input id="bankPhone" placeholder="071 234 5678 - For Instant Money">
 </div>
 
-<label style="margin-top:15px">Amount to Withdraw</label>
-<input id="withdrawAmount" placeholder="R 500" />
+<label>Amount to Withdraw</label>
+<input id="withdrawAmount" placeholder="R 500">
 
-<button onclick="saveBusiness()">💾 Save Business + Request Withdraw</button>
+<button onclick="alert('✅ Business Saved! App: '+document.getElementById('appName').value+' | Bank: '+document.getElementById('bankName').value)">💾 Save Business + Request Withdraw</button>
 
-<div style="margin-top:15px">
-<div class="stat"><span>Last Payout</span><span>R 1,200 - Capitec - Success</span></div>
+<div class="stat" style="margin-top:15px"><span>Last Payout</span><span>R 1,200 - Capitec - Success</span></div>
 <div class="stat"><span>Payout History</span><span>View All</span></div>
 </div>
+
+<div id="creator" class="card">
+<div class="header"><b>🫒 Olive + Link + QR Form</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Improved v2.1</span></div>
+
+<label>Igama le Olive</label>
+<input id="oliveName" placeholder="Lerato">
+
+<label>Phone</label>
+<input id="olivePhone" placeholder="071 234 5678">
+
+<div class="bankbox">
+<label>💰 Payout Method</label>
+<select id="payoutMethod">
+<option>Select payout method —</option>
+<option>TymeBank</option>
+<option>Capitec</option>
+<option>FNB</option>
+<option>ABSA</option>
+<option>Instant Money (Pick n Pay / Shoprite)</option>
+<option>Cash Send (FNB)</option>
+<option>eWallet (Standard Bank)</option>
+</select>
+
+<label>🏦 Account / Phone for Payout</label>
+<input id="payoutAccount" placeholder="Enter account number or phone">
+</div>
+
+<button onclick="alert('✅ Olive Added!')">+ Add Olive + Link + QR</button>
+</div>
+
+<div id="video" class="card">
+<div class="header"><b>🎥 Video + Live</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">OTT Ready</span></div>
+<label>Upload Video (OTT)</label>
+<input type="file">
+<button>⬆️ Upload Video</button>
+<button style="background:red;color:white;margin-top:20px">🔴 Start Live Stream</button>
 </div>
 
 <script>
-function saveBusiness(){
-let app=document.getElementById('appName').value;
-let bank=document.getElementById('bankName').value;
-let holder=document.getElementById('accHolder').value;
-let acc=document.getElementById('accNumber').value;
-let amount=document.getElementById('withdrawAmount').value;
-if(!app || bank.includes('Select')){alert('⚠️ Faka Igama le App ne Bank!');return;}
-alert("✅ Business Saved!\n\nApp: "+app+"\nBank: "+bank+"\nHolder: "+holder+"\nAcc: "+acc+"\nWithdraw: "+amount+"\n\n💸 Payout izongena ku "+bank+"!");
+function openTab(id,el){
+document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+el.classList.add('active');
 }
 </script>
+
+</body>
+</html>
