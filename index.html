@@ -1,221 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isango Vault OTT</title>
-<style>
-*{box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial;margin:0;padding:10px}
-h2{color:gold;text-align:center;margin:10px 0}
-.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px}
-.tab{border:1px solid gold;padding:10px 14px;border-radius:20px;white-space:nowrap;background:#111;color:gold;cursor:pointer;font-size:13px}
-.tab.active{background:gold;color:#000;font-weight:bold}
-.card{border:1px solid gold;border-radius:14px;padding:16px;margin-bottom:16px;background:#111;display:none}
-.card.active{display:block}
-label{color:gold;font-weight:bold;display:block;margin:14px 0 6px 0;font-size:14px}
-input,select{width:100%;padding:14px;border:1px solid gold;border-radius:10px;background:#000;color:#fff;display:block;margin-bottom:4px}
-button{width:100%;padding:15px;background:gold;color:#000;font-weight:bold;border:none;border-radius:12px;margin-top:18px;font-size:16px;cursor:pointer}
-.header{display:flex;justify-content:space-between;align-items:center;border:1px solid gold;border-radius:10px;padding:8px 12px;margin-bottom:12px}
-.stat{display:flex;justify-content:space-between;border-bottom:1px dashed #333;padding:10px 0;font-size:14px}
-.bankbox{border:1px dashed gold;padding:12px;border-radius:12px;margin-top:12px;background:#0a0a0a}
-.videoWrap{position:relative;background:#000;border:1px solid gold;border-radius:12px;overflow:hidden;margin-top:12px}
-.watermark{position:absolute;top:10px;left:10px;color:rgba(255,215,0,0.35);font-size:11px;pointer-events:none;user-select:none;z-index:2;font-weight:bold}
-.blackScreen{position:absolute;top:0;left:0;width:100%;height:100%;background:#000;display:none;justify-content:center;align-items:center;z-index:10;text-align:center}
-.toggleBox{border:1px solid gold;border-radius:10px;padding:12px;margin:12px 0;background:#000;display:flex;justify-content:space-between;align-items:center}
-.switch{position:relative;display:inline-block;width:50px;height:28px;margin:0}
-.switch input{opacity:0;width:0;height:0}
-.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#333;border:1px solid gold;border-radius:20px;transition:.3s}
-.dot{position:absolute;height:20px;width:20px;left:4px;bottom:3px;background:#888;border-radius:50%;transition:.3s;z-index:3}
-</style>
-</head>
-<body>
+"use client"
+import { useState } from "react"
 
-<h2>Isango Vault OTT</h2>
+export default function IsangoVaultClean() {
+  const [open, setOpen] = useState(true)
+  const [bank, setBank] = useState("")
+  const [accNo, setAccNo] = useState("")
+  const [saved, setSaved] = useState(false)
 
-<div class="tabs">
-<div class="tab active" onclick="openTab('overview',this)">📊 Overview</div>
-<div class="tab" onclick="openTab('business',this)">💼 Business</div>
-<div class="tab" onclick="openTab('creator',this)">🫒 Olive + Link + QR</div>
-<div class="tab" onclick="openTab('video',this)">🎥 Video+Live</div>
-</div>
+  return (
+    <main className="min-h-screen bg-black text-white p-4 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold">Isango Vault <span className="text-yellow-400">V2 CLEAN</span></h1>
+      <p className="text-xs text-zinc-500 mt-1">isango-vault-2026.vercel.app - 100% yakho</p>
 
-<div id="overview" class="card active">
-<div class="header"><b>📊 Overview</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Live v2.1</span></div>
-<div class="stat"><span>Total Olives</span><span>12</span></div>
-<div class="stat"><span>Total Earnings</span><span>R 4,250</span></div>
-<div class="stat"><span>Pending Payouts</span><span>R 890</span></div>
-<div class="stat"><span>Today Views</span><span>1,432</span></div>
-<div class="stat"><span>🛡️ SA 18+ Verified - Osisi Baphephile 24/7</span><span>Secure</span></div>
-</div>
+      <div className="bg-zinc-900 p-5 rounded-2xl mt-6">
+        <p className="text-sm text-zinc-400">Balance</p>
+        <p className="text-3xl font-bold">R4,250.00</p>
+      </div>
 
-<div id="business" class="card">
-<div class="header"><b>💼 Business / Withdraw</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Secure</span></div>
-<label>🏢 Igama le App / Business Name</label>
-<input id="appName" placeholder="Isango Vault - Lerato">
-<label>Balance Yakho</label>
-<input value="R 4,250 - Available" disabled>
-<div class="bankbox">
-<b style="color:gold">🏦 Bank Details - For Payout</b>
-<label>Bank Name</label>
-<select id="bankName"><option>Select bank —</option><option>TymeBank</option><option>Capitec</option><option>FNB</option><option>ABSA</option><option>Standard Bank</option><option>Nedbank</option></select>
-<label>Account Holder Name</label><input id="accHolder" placeholder="Lerato Dlamini">
-<label>Account Number</label><input id="accNumber" placeholder="1234567890">
-<label>Branch Code (Optional)</label><input id="branchCode" placeholder="250655">
-<label>Phone Linked to Bank / eWallet</label><input id="bankPhone" placeholder="071 234 5678">
-</div>
-<label>Amount to Withdraw</label><input id="withdrawAmount" placeholder="R 500">
-<button onclick="saveBusiness()">💾 Save Business + Request Withdraw</button>
-</div>
+      {/* MANJE IYACHOFEKA - 100% */}
+      <button onClick={()=>setOpen(!open)} className="w-full flex justify-between bg-white text-black p-4 rounded-2xl font-bold mt-4">
+        <span>Business / Withdraw</span>
+        <span className="bg-yellow-400 px-3 rounded-full text-xs">Secure {open?"▼":"▶"}</span>
+      </button>
 
-<div id="creator" class="card">
-<div class="header"><b>🫒 Olive + Link + QR Form</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">Improved v2.1</span></div>
-<label>Igama le Olive</label><input id="oliveName" placeholder="Lerato">
-<label>Phone</label><input id="olivePhone" placeholder="071 234 5678">
-<div class="bankbox">
-<label>💰 Payout Method</label>
-<select id="payoutMethod"><option>Select payout method —</option><option>TymeBank</option><option>Capitec</option><option>FNB</option><option>ABSA</option><option>Instant Money (Pick n Pay / Shoprite)</option><option>Cash Send (FNB)</option><option>eWallet (Standard Bank)</option></select>
-<label>🏦 Account / Phone for Payout</label><input id="payoutAccount" placeholder="Enter account number or phone for payout">
-</div>
-<button onclick="addOlive()">+ Add Olive + Link + QR</button>
-</div>
-
-<div id="video" class="card">
-<div class="header"><b>🎥 Video + Live</b><span style="border:1px solid gold;padding:2px 8px;border-radius:10px;font-size:11px;color:gold">DRM Protected - Osisi Safe</span></div>
-
-<label>Upload Video (OTT)</label><input type="file" id="videoUpload">
-
-<div class="videoWrap">
-<video id="protectedVideo" controls controlsList="nodownload noremoteplayback" disablePictureInPicture style="width:100%;background:#000"><source src="" type="video/mp4"></video>
-<div class="watermark" id="videoWatermark">Isango Vault - Lerato - 071****678 - ID: #8842</div>
-<div class="blackScreen" id="blackScreen"><div><p style="color:gold;font-weight:bold;margin:0">🔒 Screen Recording Blocked</p><p style="font-size:11px;color:#888;margin:5px 0 0 0">Protected - Osisi Uphephile</p></div></div>
-</div>
-<p style="font-size:11px;color:#888;margin:6px 0">🛡️ Protected: No Download • No Screen Record • Watermarked • Safety Alert</p>
-
-<div class="toggleBox">
-<div><b style="color:gold;font-size:14px">⬇️ Download Permission</b><p id="downloadStatus" style="font-size:12px;color:#888;margin:4px 0 0 0">OFF - Viewers must request - Lerato Unquma</p></div>
-<label class="switch"><input type="checkbox" id="downloadToggle" onchange="toggleDownload()"><span class="slider"></span><span class="dot" id="toggleDot"></span></label>
-</div>
-
-<div id="permissionRequests" style="border:1px dashed gold;padding:10px;border-radius:10px;display:block;background:#0a0a0a">
-<b style="color:gold;font-size:13px">📩 Download Requests - Umnikazi (Lerato) Unquma</b>
-<p style="font-size:11px;color:#888;margin:4px 0 8px 0">Uma uLerato ethi CHA - Ivaliwe - Ku Sipho - Angeke adownloade</p>
-
-<div style="border:1px solid #333;border-radius:8px;padding:8px;margin-bottom:8px;background:#111">
-<div style="display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:13px">Sipho - 071***123</b><br><span style="font-size:11px;color:#888">Cela ukudownload-a: "Lerato Dance.mp4" ka Lerato - 20:34</span></div><div style="display:flex;gap:5px"><button style="width:auto;padding:6px 12px;margin:0;font-size:12px;background:gold" onclick="approveDownload('Sipho')">✅ Vumela</button><button style="width:auto;padding:6px 10px;margin:0;font-size:11px;background:#333;color:gold;border:1px solid gold" onclick="declineDownload('Sipho')">❌ Cha</button></div></div>
-<div id="siphoStatus" style="font-size:11px;color:gold;display:none;margin-top:6px">✅ Sipho - Unemvume - Kuphela yena!</div>
-<div id="siphoDecline" style="font-size:11px;color:red;display:none;margin-top:6px">❌ Cha - Angimvuleli Sipho - Ivaliwe kuye!</div>
-</div>
-
-<div style="border:1px solid #333;border-radius:8px;padding:8px;margin-bottom:8px;background:#111">
-<div style="display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:13px">Thandi - 082***456</b><br><span style="font-size:11px;color:#888">Cela ukudownload-a: "Lerato Dance.mp4" ka Lerato - 20:35</span></div><div style="display:flex;gap:5px"><button style="width:auto;padding:6px 12px;margin:0;font-size:12px;background:gold" onclick="approveDownload('Thandi')">✅ Vumela</button><button style="width:auto;padding:6px 10px;margin:0;font-size:11px;background:#333;color:gold;border:1px solid gold" onclick="declineDownload('Thandi')">❌ Cha</button></div></div>
-<div id="thandiStatus" style="font-size:11px;color:gold;display:none;margin-top:6px">✅ Thandi - Unemvume - Kuphela yena!</div>
-<div id="thandiDecline" style="font-size:11px;color:red;display:none;margin-top:6px">❌ Cha - Angimvuleli Thandi - Ivaliwe kuye!</div>
-</div>
-
-<div style="border:1px solid gold;border-radius:8px;padding:8px;margin-top:10px;background:#000">
-<b style="color:gold;font-size:12px">🔓 Bantu Abavunyelwe Ukudownload-a (Allowed List):</b>
-<div id="allowedList" style="font-size:12px;margin-top:6px;color:#fff">- Akekho okwamanje - Uma i-OFF - Kumele bacele - Uma uLerato ethi CHA - Ivaliwe!</div>
-</div>
-</div>
-
-<button onclick="uploadVideo()">⬆️ Upload Video</button>
-
-<div style="border:1px solid #333;border-radius:10px;padding:10px;margin-top:12px">
-<b style="font-size:13px">👀 Viewer View:</b><br>
-<button style="width:auto;padding:8px 15px;font-size:13px;background:#111;color:gold;border:1px solid gold;margin-top:8px" onclick="requestDownload()">🔒 Request to Download - Cela Imvume ku Lerato</button>
-</div>
-
-<div id="safetyLog" style="border:1px solid red;border-radius:10px;padding:10px;margin-top:12px;background:#0a0000">
-<b style="color:red;font-size:12px">🛡️ Safety Log - Osisi Baphephile 24/7</b>
-<div style="font-size:11px;color:#888;margin-top:6px">Uma kukhona ozama ukurecorder - Kuzovela lapha - Futhi uSisi uzothola i-WhatsApp Alert</div>
-</div>
-
-<button style="background:red;color:white;margin-top:15px" onclick="alert('🔴 Live Started! Link: isango.vault/live/Lerato')">🔴 Start Live Stream</button>
-</div>
-
-<script>
-function openTab(id,el){
-document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-el.classList.add('active');
+      {open && (
+        <div className="bg-zinc-900 p-5 rounded-2xl mt-3 space-y-3 border border-zinc-800">
+          <select value={bank} onChange={e=>setBank(e.target.value)} className="w-full p-3 rounded-xl bg-black border border-zinc-700">
+            <option value="">Select bank —</option>
+            <option>TymeBank</option>
+            <option>FNB</option>
+            <option>Capitec</option>
+          </select>
+          <input value={accNo} onChange={e=>setAccNo(e.target.value)} placeholder="Account Number" className="w-full p-3 rounded-xl bg-black border border-zinc-700" />
+          <input placeholder="Lerato Dlamini - Holder" className="w-full p-3 rounded-xl bg-black border border-zinc-700" />
+          
+          <button onClick={()=>{ if(!bank||!accNo) return alert("Khetha ibhange!"); setSaved(true)}} className="w-full bg-yellow-400 text-black p-4 rounded-xl font-bold">
+            {saved ? "✓ Saved!" : "Save & Connect PayFast"}
+          </button>
+          
+          <p className="text-[10px] text-zinc-500 text-center">CLEAN CODE - No Paid Libs - Organized - Yours Only</p>
+        </div>
+      )}
+    </main>
+  )
 }
-function saveBusiness(){
-let app=document.getElementById('appName').value;
-let bank=document.getElementById('bankName').value;
-if(!app || bank.includes('Select')){alert('⚠️ Faka Igama le App ne Bank!');return;}
-alert("✅ Business Saved!\nApp: "+app+"\nBank: "+bank+"\n💸 Payout izongena!");
-}
-function addOlive(){
-let name=document.getElementById('oliveName').value || 'Lerato';
-let method=document.getElementById('payoutMethod').value;
-if(method.includes('Select')){alert('⚠️ Khetha i-Payout Method!');return;}
-alert("✅ Olive Added!\nIgama: "+name+"\nPayout: "+method);
-}
-function toggleDownload(){
-let toggle=document.getElementById('downloadToggle');
-let status=document.getElementById('downloadStatus');
-let dot=document.getElementById('toggleDot');
-let req=document.getElementById('permissionRequests');
-let slider=document.querySelector('.slider');
-if(toggle.checked){status.innerHTML="ON - Anyone can download - Wonke angadownload-a";status.style.color="gold";dot.style.transform="translateX(22px)";dot.style.background="gold";slider.style.background="#111";req.style.display="none";}
-else{status.innerHTML="OFF - Lerato Unquma - Kumele bacele - Uma ethi CHA - Ivaliwe";status.style.color="#888";dot.style.transform="translateX(0)";dot.style.background="#888";req.style.display="block";}
-}
-let allowedUsers=[];
-function approveDownload(name){
-let statusId=name.toLowerCase()+'Status';
-let declineId=name.toLowerCase()+'Decline';
-let s=document.getElementById(statusId);
-let d=document.getElementById(declineId);
-if(s){s.style.display='block';}
-if(d){d.style.display='none';}
-if(!allowedUsers.includes(name)){allowedUsers.push(name);}
-let list=document.getElementById('allowedList');
-list.innerHTML=allowedUsers.map(u=>`✅ ${u} - Unemvume - Kuphela yena - ${new Date().toLocaleTimeString()}`).join('<br>');
-alert(`✅ Lerato uvumele ${name}!\nUma ethi CHA kwabanye - Ihlala ivaliwe kubo!`);
-}
-function declineDownload(name){
-let statusId=name.toLowerCase()+'Status';
-let declineId=name.toLowerCase()+'Decline';
-let s=document.getElementById(statusId);
-let d=document.getElementById(declineId);
-if(s){s.style.display='none';}
-if(d){d.style.display='block';}
-allowedUsers=allowedUsers.filter(u=>u!==name);
-let list=document.getElementById('allowedList');
-if(allowedUsers.length===0){list.innerHTML=`- Akekho - ${name} - Wenqatshelwe - ❌ Cha Angimvuleli! - Ivaliwe kuye!`;}
-else{list.innerHTML=allowedUsers.map(u=>`✅ ${u} - Allowed`).join('<br>')+`<br>❌ ${name} - Wenqatshelwe!`;}
-alert(`❌ Lerato uthi CHA - Angimvuleli ${name}!\n${name} - Angeke adownloade - Ivaliwe kuye - Osisi Uphephile!`);
-}
-function uploadVideo(){
-let on=document.getElementById('downloadToggle').checked;
-alert('✅ Video Uploaded!\nDownload: '+(on?'ON':'OFF - Lerato Unquma - Uma ethi CHA - Ivaliwe')+'\n🛡️ Safety Alert Active - Osisi Baphephile!');
-}
-function requestDownload(){
-let on=document.getElementById('downloadToggle').checked;
-if(on){alert('⬇️ Downloading...');}
-else{alert('📩 Request Sent to Lerato! Uma ethi CHA - Angeke ukwazi ukudownload-a - Osisi Uphephile!');}
-}
-function sendSafetyAlert(viewerName, videoName){
-let sisiPhone="27712345678"; // FAKA INUMBER KA SISI LAPHA - Isibonelo: 27712345678
-let message=`🚨 ISANGO VAULT SAFETY ALERT 🚨%0A%0AOsisi uLerato - Umuntu uzamile ukwephula!%0A%0A👤 Viewer: ${viewerName}%0A🎥 Video: ${videoName}%0A⏰ Isikhathi: ${new Date().toLocaleString()}%0A🔒 Action: Uzamile ukurecorder / screenshot%0A%0A✅ Isivikelo sisebenzile - I-video ibe mnyama!%0AOsisi uphephile - 100%!`;
-let waLink=`https://wa.me/${sisiPhone}?text=${message}`;
-alert(`🚨 SAFETY ALERT - Osisi Uphephile! 🚨\n\n${viewerName} uzamile ukurecorder "${videoName}"\nIsivikelo sisebenzile - I-video ibe mnyama!`);
-window.open(waLink, '_blank');
-let log=document.getElementById('safetyLog');
-if(log){log.innerHTML+=`<div style="border:1px solid red;padding:6px;border-radius:6px;margin-top:6px;background:#200;font-size:11px">🚨 ${new Date().toLocaleTimeString()} - ${viewerName} - Uzamile ukurecorder "${videoName}" - BLOCKED - Lerato uthi CHA - Osisi Uphephile ✅</div>`;}
-}
-document.getElementById('protectedVideo').addEventListener('contextmenu', e=>{e.preventDefault();return false;});
-document.addEventListener('keydown', (e)=>{
-if(e.key==='PrintScreen' || (e.ctrlKey && e.shiftKey && e.key==='S')){
-e.preventDefault();
-document.getElementById('blackScreen').style.display='flex';
-sendSafetyAlert('Sipho - 071***123', 'Lerato Dance.mp4 - ka Lerato');
-setTimeout(()=>{document.getElementById('blackScreen').style.display='none'},3000);
-}
-});
-setInterval(()=>{let w=document.getElementById('videoWatermark');if(w){w.style.left=Math.random()*60+'%';w.style.top=Math.random()*70+'%';}},3000);
-</script>
-
-</body>
-</html>
