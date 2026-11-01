@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKHAYALETHU - Our Home - 18+</title>
+<style>
+body{margin:0;background:#0a0a0a;color:#fff;font-family:sans-serif}
+#ageGate{position:fixed;inset:0;background:rgba(0,0,0,0.96);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px}
+.ageCard{background:#18181b;border:1px solid #27272a;border-radius:24px;padding:32px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.btn{width:100%;padding:16px;border-radius:14px;font-weight:bold;border:none;cursor:pointer;margin-top:10px;font-size:15px}
+.btn-y{background:#facc15;color:#000}
+.btn-w{background:#fff;color:#000}
+.btn-d{background:#000;color:#aaa;border:1px solid #333}
+.main{max-width:420px;margin:auto;padding:24px}
+.card{background:#18181b;border:1px solid #222;border-radius:18px;padding:20px;margin-top:16px}
+input,select{width:100%;padding:14px;border-radius:12px;background:#000;color:#fff;border:1px solid #333;margin-top:10px;box-sizing:border-box}
+</style>
+</head>
+<body>
 
+<!-- AGE GATE 18+ -->
+<div id="ageGate">
+<div class="ageCard">
+<div style="font-size:40px">🏠</div>
+<h2 style="margin:10px 0 0 0">IKHAYALETHU</h2>
+<p style="color:#facc15;font-size:11px;letter-spacing:2px;margin:4px 0">OUR HOME</p>
+<p style="color:#a1a1aa;font-size:13px;margin-top:16px">Leli khaya lele-18+ kuphela. Qinisekisa iminyaka yakho ukuze ungene ekhaya.</p>
+<p style="color:#666;font-size:12px">This home is for adults 18+ only. Verify your age to enter.</p>
+<div style="margin-top:22px">
+<button class="btn btn-y" onclick="enterSite()">Yebo, Ngina 18+ - Ngena Ekhaya 🏠</button>
+<button class="btn btn-d" onclick="leaveSite()">Cha, Ngina ngaphansi - Phuma</button>
+</div>
+<p style="font-size:9px;color:#444;margin-top:18px">By entering IKHAYALETHU, you confirm you are 18+ and agree to Terms.</p>
+</div>
+</div>
+
+<!-- MAIN IKHAYALETHU APP -->
+<div class="main">
+<div style="display:flex;align-items:center;gap:12px">
+<div style="width:44px;height:44px;background:#facc15;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px">🏠</div>
+<div>
+<h2 style="margin:0">IKHAYALETHU</h2>
+<p style="margin:0;color:#facc15;font-size:10px;letter-spacing:2px">OUR HOME - 18+ VERIFIED</p>
+</div>
+</div>
+<p style="color:#555;font-size:11px;margin-top:8px">ikhayalethu.vercel.app - New Home - Clean - Secure</p>
+
+<div class="card">
+<p style="color:#888;font-size:11px;margin:0">IKHAYA BALANCE</p>
+<b style="font-size:34px">R4,250.00</b><br>
+<span style="color:#4ade80;font-size:11px">● PayFast Ready ● Home Secure ● 18+</span>
+</div>
+
+<button class="btn btn-w" onclick="document.getElementById('biz').style.display=document.getElementById('biz').style.display=='none'?'block':'none'">Business / Withdraw 🔒 Ekhaya ▼</button>
+
+<div id="biz" class="card" style="display:none">
+<label style="font-size:11px;color:#aaa">Ibhange Lakho Ekhaya</label>
+<select id="bank"><option value="">Khetha ibhange —</option><option>TymeBank</option><option>FNB</option><option>Capitec</option><option>ABSA</option><option>Standard Bank</option></select>
+<input id="acc" placeholder="Account Number - Inombolo ye-Akhawunti">
+<input placeholder="Holder - Lerato Dlamini">
+<button class="btn btn-y" onclick="if(!bank.value||!acc.value){alert('Khetha ibhange ne Account ekhaya!');return}alert('✓ Siyabonga! '+bank.value+' ixhumekile ekhaya! IKHAYALETHU link yakho /o/lerato isebenza! Wamukelekile ekhaya! 🏠')">Save Ekhaya & Connect PayFast</button>
+<p style="font-size:10px;color:#555;text-align:center;margin-top:10px">IKHAYALETHU - New - Clean - Age Gate - No Isango - 100% Yakho</p>
+</div>
+
+<div class="card">
+<h4 style="margin:0;font-size:13px">🏠 PAY & WATCH Ekhaya Link</h4>
+<p style="font-size:12px;color:#facc15;margin:6px 0">ikhayalethu.vercel.app/o/lerato</p>
+<p style="font-size:10px;color:#666">Isebenza kuphela uma u-18+ verified - Ikhaya livikelekile</p>
+<button class="btn btn-d" style="font-size:12px;padding:12px" onclick="navigator.clipboard.writeText(location.host+'/o/lerato');alert('Link copied - Ikhaya link!')">Copy Ikhaya Link</button>
+</div>
+
+</div>
+
+<script>
+function enterSite(){document.getElementById('ageGate').style.display='none';localStorage.setItem('ikhayaAge','true')}
+function leaveSite(){window.location.href='https://google.com'}
+if(localStorage.getItem('ikhayaAge')==='true'){document.getElementById('ageGate').style.display='none'}
+</script>
+</body>
+</html>
